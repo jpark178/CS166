@@ -533,7 +533,7 @@ public class DBProject {
       while(true) {
 		  System.out.print("Input repair ID: ");
 		  try {
-			  roomID = Integer.parseInt(in.readLine());
+			  repairID = Integer.parseInt(in.readLine());
 			  break;
 		  } catch (Exception e) {
 			  System.out.println("Your input is invalid!");
@@ -651,6 +651,46 @@ public class DBProject {
    public static void bookRoom(DBProject esql){
 	  // Given hotelID, roomNo and customer Name create a booking in the DB 
       // Your code goes here.
+      int hotelID;
+      int roomNo;
+      String fName;
+
+      while(true){
+        System.out.print("Please input Customer first name: ");
+        try{
+          fName = in.readLine();
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+
+      while(true){
+        System.out.print("Please input Hotel ID: ");
+        try{
+          hotelID = Integer.parseInt(in.readLine());
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+
+      while(true){
+        System.out.print("Please input Room Number: ");
+        try{
+          roomNo = Integer.parseInt(in.readLine());
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+      String query;
+      try{
+      	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + 
+      }
       // ...
       // ...
    }//end bookRoom
