@@ -592,23 +592,11 @@ public class DBProject {
       int hotelID;
       int roomNo;
       String fName;
-      String lName;
 
       while(true){
         System.out.print("Please input Customer first name: ");
         try{
           fName = in.readLine();
-          break;
-        }catch (Exception e) {
-          System.out.println("Your Input is invalid!");
-          continue;
-        }
-      }
-
-      while(true){
-        System.out.print("Please input Customer last name: ");
-        try{
-          lName = in.readLine();
           break;
         }catch (Exception e) {
           System.out.println("Your Input is invalid!");
@@ -637,8 +625,10 @@ public class DBProject {
           continue;
         }
       }
-
-
+      String query;
+      try{
+      	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + 
+      }
       // ...
       // ...
    }//end bookRoom
