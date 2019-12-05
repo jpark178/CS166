@@ -853,7 +853,7 @@ public class DBProject {
                   			}catch(Exception e) {
                     			System.out.println("Your input is invalid");
                   			}
-                  			Date temp = Date(bookingyear, bookingmonth, bookingday);
+                  			Date temp = new Date(bookingyear, bookingmonth, bookingday);
                   			bookingDate = temp;
                 		}
                 		
