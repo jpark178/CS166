@@ -854,6 +854,7 @@ public class DBProject {
                     System.out.println("Your input is invalid");
                   }
                 }
+                Date bookingDate = new Date(bookingyear, bookingmonth, bookingday);
                 while(true){
                  System.out.print("Please input the number of People for the Booking: ");
                  try{
