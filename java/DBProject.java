@@ -451,11 +451,11 @@ public class DBProject {
       // ...
    }//end addRoom
 
-   public static void addMaintenanceCompany(DBProject esql){
-      // Given maintenance Company details add the maintenance company in the DB
+	public static void addMaintenanceCompany(DBProject esql){
+		// Given maintenance Company details add the maintenance company in the DB
 		
 		int compID;
-		do {
+		while(true) {
 			System.out.print("Input Company ID: ");
 			try {
 				compID = Integer.parseInt(in.readLine());
@@ -464,10 +464,10 @@ public class DBProject {
 				System.out.println("This compID does not exist!");
 				continue;
 			}
-		}while (true);
+		};
 		
-		string compName;
-		do {
+		String compName;
+		while(true) {
 			System.out.print("Input Company Name: ");
 			try {
 				compName = in.readLine();
@@ -479,11 +479,11 @@ public class DBProject {
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);	  
+		};	  
 		
-		string compAddress;
-		do {
-			SYstem.out.print("Input Company Address: ");
+		String compAddress;
+		while(true) {
+			System.out.print("Input Company Address: ");
 			try {
 				compAddress = in.readLine();
 				break;
@@ -491,11 +491,11 @@ public class DBProject {
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		};
 		
 		char compCertified;
 		boolean isCertified;
-		do {
+		while(true) {
 			System.out.print("Is this comapny certified? (y/n): ");
 			try {
 				compCertified = in.readLine();
@@ -511,8 +511,15 @@ public class DBProject {
 				System.out.println("Your input is invalid!");
 				continue;
 			}
-		}while (true);
+		};
 		
+		String query;
+		try{
+			query = "INSERT INTO MainetenanceCompany (cmpID, name, address, isCertified) VALUES (" + compID + ", \'" + compName + "\', \'" + compAddress + "\', \'" + isCertified + "\');";
+			esql.executeQuery(query);
+		}catch(Exception e) {
+			System.err.println("Query failed: " + e.getMessage());
+		}
       // ...
       // ...
    }//end addMaintenanceCompany
@@ -520,6 +527,22 @@ public class DBProject {
    public static void addRepair(DBProject esql){
 	  // Given repair details add repair in the DB
       // Your code goes here.
+      
+      int roomID;
+      do {
+		  System.out.print("Input room ID: ");
+		  try {
+			  roomID = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }while (true);
+	  
+	  int hotelID;
+		  
+      
       // ...
       // ...
    }//end addRepair
