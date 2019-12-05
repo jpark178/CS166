@@ -783,6 +783,7 @@ public class DBProject {
     int bookingday;
     int noOfPeople;
     int price;
+    Date bookingDate;
     try{
       	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
       	if(esql.executeQuery(query) == 0) {
@@ -852,7 +853,7 @@ public class DBProject {
                   			}catch(Exception e) {
                     			System.out.println("Your input is invalid");
                   			}
-                  			Date bookingDate = new Date(bookingyear, bookingmonth, bookingday);
+                  			Date bookingDate = Date(bookingyear, bookingmonth, bookingday);
                 		}
                 		
                 
