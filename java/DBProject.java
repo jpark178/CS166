@@ -593,8 +593,9 @@ public class DBProject {
       int roomNo;
       String fName;
       String lName;
+
       while(true){
-        System.out.print("Please input Customer fName: ");
+        System.out.print("Please input Customer first name: ");
         try{
           fName = in.readLine();
           break;
@@ -603,6 +604,18 @@ public class DBProject {
           continue;
         }
       }
+
+      while(true){
+        System.out.print("Please input Customer last name: ");
+        try{
+          lName = in.readLine();
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+
       while(true){
         System.out.print("Please input Hotel ID: ");
         try{
