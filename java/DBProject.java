@@ -494,7 +494,7 @@ public class DBProject {
 			}
 		};
 		
-		char compCertified;
+		String compCertified;
 		boolean isCertified;
 		while(true) {
 			System.out.print("Is this comapny certified? (y/n): ");
