@@ -319,7 +319,7 @@ public class DBProject {
    		System.out.print("Input Customer phone number: ");
    		try {
    			phNo = Integer.parseInt(in.readLine());
-   			if(phNo.length() == 0) {
+   			if(phNo == 0) {
    				throw new RuntimeException("Customer phone number cannot be left blank");
    			}
    			break;
