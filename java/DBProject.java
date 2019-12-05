@@ -781,7 +781,6 @@ public class DBProject {
       int bookingyear;
       int bookingmonth;
       int bookingday;
-      Date bookingDate;
       int noOfPeople;
       int price;
       try{
