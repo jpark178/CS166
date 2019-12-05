@@ -461,7 +461,7 @@ public class DBProject {
 			try {
 				compID = Integer.parseInt(in.readLine());
 				break;
-			}catch(Execption e) {
+			}catch(Exception e) {
 				System.out.println("This compID does not exist!");
 				continue;
 			}
@@ -533,7 +533,7 @@ public class DBProject {
       do {
 		  System.out.print("Input room ID: ");
 		  try {
-			  roomID = in.readLine();
+			  roomID = Integer.parseInt(in.readLine());
 			  break;
 		  } catch (Exception e) {
 			  System.out.println("Your input is invalid!");
