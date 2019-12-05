@@ -782,7 +782,7 @@ public class DBProject {
       int bookingmonth;
       int bookingday;
       Date bookingDate;
-      int nOfPeople;
+      int noOfPeople;
       int price;
       try{
       	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
@@ -816,6 +816,7 @@ public class DBProject {
                   }catch(Exception e) {
                     System.out.println("Your input is invalid");
                   }
+                  System.out.print("Please input Booking Date Month: ");
                   try{
                     bookingmonth = Integer.parseInt(in.readLine());
                     if(bookingmonth == 0) {
