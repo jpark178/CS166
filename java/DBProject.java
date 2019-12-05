@@ -698,15 +698,14 @@ public class DBProject {
       			try{
       				input = in.readLine();
       				if(input == "y" || input == "Y") {
-						while(true){
-							System.out.print("Please input Booking Number: ");
-							try{
-								bID = Integer.parseInt(in.readLine());
-								break;
-							}
-						}catch (Exception e) {
-							System.out.println("Your input is invalid!");
-						}
+						    while(true){
+							   System.out.print("Please input Booking Number: ");
+							   try{
+								    bID = Integer.parseInt(in.readLine());
+								    break;
+							   }catch (Exception e) {
+							     System.out.println("Your input is invalid!");
+						    }
       				}
       				
       			}
