@@ -772,6 +772,33 @@ public class DBProject {
 		};
 	  
 		Date repairDate = new Date(yearInput, monthInput, dayInput);
+		
+		String description;
+		while(true) {
+			System.out.print("Input repair description: ");
+			try {
+				description = in.readLine();
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
+		
+		String repairType;
+		while(true) {
+			System.out.print("Input repair type: ");
+			try {
+				repairType = in.readLine();
+				if(repairType.length() > 30) {
+					throw new RuntimeException("Repair type cannot be longer than 30 characters.");
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
 	  
 		String query;
 		try {
