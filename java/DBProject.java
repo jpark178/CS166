@@ -336,7 +336,7 @@ public class DBProject {
    		System.out.print("Input Customer birth year: ");
    		try {
    			yearInput = Integer.parseInt(in.readLine());
-   			if(yearInput.length() == 0) {
+   			if(yearInput == 0) {
    				throw new RuntimeException("Customer birth year cannot be left blank");
    			}
    			break;
@@ -349,7 +349,7 @@ public class DBProject {
    		System.out.print("Input Customer birth month: ");
    		try {
    			monthInput = Integer.parseInt(in.readLine());
-   			if(monthInput.length() <= 0 || monthInput.length() > 12) {
+   			if(monthInput <= 0 || monthInput > 12) {
    				throw new RuntimeException("Customer birth month cannot be left blank and cannot be greater than 12 (December)");
    			}
    			break;
@@ -362,8 +362,8 @@ public class DBProject {
    		System.out.print("Input Customer birth day: ");
    		try {
    			dayInput = Integer.parseInt(in.readLine());
-   			if(dayInput.length() == 0) {
-   				throw new RuntimeException("Customer birth day cannot be left blank");
+   			if(dayInput <= 0 || dayInput > 31) {
+   				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
    			break;
    		}catch (Exception e) {
