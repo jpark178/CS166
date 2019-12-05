@@ -332,6 +332,8 @@ public class DBProject {
    	int yearInput;
    	int monthInput;
    	int dayInput;
+   	boolean isLeap;
+   	
    	while(true){
    		System.out.print("Input Customer birth year: ");
    		try {
@@ -339,12 +341,31 @@ public class DBProject {
    			if(yearInput == 0) {
    				throw new RuntimeException("Customer birth year cannot be left blank");
    			}
+   			if(yearInput <= 0 || yearInput > 9999) {
+				throw new RuntimeException("Please input valid year (1 - 9999).");
+			}
    			break;
    		}catch (Exception e) {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
    	};
+
+	// Checking for leap year.
+	if(yearInput % 4 == 0) {
+		if(yearInput % 100 == 0) {
+			if(yearINput % 400 == 0) {
+				isLeap = true;
+			} else {
+				isLeap = false;
+			}
+		} else {
+			isLeap = true;
+		}
+	} else {
+		isLeap = false;
+	}
+
    	while(true){
    		System.out.print("Input Customer birth month: ");
    		try {
@@ -362,9 +383,30 @@ public class DBProject {
    		System.out.print("Input Customer birth day: ");
    		try {
    			dayInput = Integer.parseInt(in.readLine());
-   			if(dayInput <= 0 || dayInput > 31) {
+   			if(dayInput == 0) {
    				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
+   			if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthINput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
+				if(dayInput < 0 || dayInput > 31) {
+					throw new RuntimeException("Please input valid date.");
+				}
+			}
+			if(monthInput == 4 || monthINput == 6 || monthInput == 9 || monthInput == 11) {
+				if(dayInput < 0 || dayInput > 30) {
+					throw new RuntimeException("Please input valid date.");
+				}
+			}
+			if(monthInput == 2) {
+				if(isLeap) {
+					if(dayInput < 0 || dayInput > 29) {
+						throw new RuntimeException("Please input valid date.");
+					}
+				} else {
+					if(dayInput < 0 || dayInput > 28) {
+						throw new RuntimeException("Please input valid date.");
+					}
+				}
+			}
    			break;
    		}catch (Exception e) {
    			System.out.println("Your input is invalid!");
@@ -529,122 +571,152 @@ public class DBProject {
 	  // Given repair details add repair in the DB
       // Your code goes here.
       
-      int repairID;
-      while(true) {
-		  System.out.print("Input repair ID: ");
-		  try {
-			  repairID = Integer.parseInt(in.readLine());
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
+		int repairID;
+		while(true) {
+			System.out.print("Input repair ID: ");
+			try {
+				repairID = Integer.parseInt(in.readLine());
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
 	  
-	  int hotelID;
-	  while(true) {
-		  System.out.print("Input hotel ID: ");
-		  try {
-			  hotelID = Integer.parseInt(in.readLine());
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
+		int hotelID;
+		while(true) {
+			System.out.print("Input hotel ID: ");
+			try {
+				hotelID = Integer.parseInt(in.readLine());
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
 	  
-	  int roomNum;
-	  while(true) {
-		  System.out.print("Input room number: ");
-		  try {
-			  roomNum = Integer.parseInt(in.readLine());
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
+		int roomNum;
+		while(true) {
+			System.out.print("Input room number: ");
+			try {
+				roomNum = Integer.parseInt(in.readLine());
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
 	  
-	  int maintCompany;
-	  while(true) {
-		  System.out.print("Input maintenance company ID: ");
-		  try {
-			  maintCompany = Integer.parseInt(in.readLine());
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
+		int maintCompany;
+		while(true) {
+			System.out.print("Input maintenance company ID: ");
+			try {
+				maintCompany = Integer.parseInt(in.readLine());
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
 	  
-	  int yearInput;
-	  int monthInput;
-	  int dayInput;
+		int yearInput;
+		int monthInput;
+		int dayInput;
+		boolean isLeap;
 	  
-	  while(true) {
-		  System.out.print("Input Repair date year: ");
-		  try{
-			  yearInput = Integer.parseInt(in.readLine());
-			  if(yearInput == 0) {
-				  throw new RuntimeException("Repair date year cannot be left blank.");
-			  }
-			  if(yearInput < 0 || yearInput > 9999) {
-				  throw new RuntimeException("Please input valid year (1 - 9999).");
-			  }
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
-	  while(true) {
-		  System.out.print("Input Repair date month: ");
-		  try {
-			  monthInput = Integer.parseInt(in.readLine());
-			  if(monthInput == 0) {
-				  throw new RuntimeException("Repair date month cannot be left blank.");
-			  }
-			  if(monthInput < 0 || monthInput > 12) {
-				  throw new RuntimeException("Please input valid month (1 - 12).");
-			  }
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
-	  while(true) {
-		  System.out.print("Input Repair date day: ");
-		  try {
-			  dayInput = Integer.parseInt(in.readLine());
-			  if(dayInput == 0) {
-				  throw new RuntimeException("Repair date day cannot be left blank.");
-			  }
-			  if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
-				  if(dayInput < 0 || dayInput > 31) {
-					  throw new RuntimeException("Please input valid date.");
-				  }
-			  }
-			  if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthINput == 11) {
-				  if(dayInput < 0 || dayInput > 30) {
-					  throw new RuntimeException("Please input valid date.");
-				  }
-			  }
-			  if(monthInput == 2) {
-				  if(dayInput < 0 || dayInput > 28) {
-					  throw new RuntimeException("Please input valid date.");
-				  }
-			  }
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-			  continue;
-		  }
-	  };
+		while(true) {
+			System.out.print("Input Repair date year: ");
+			try{
+				yearInput = Integer.parseInt(in.readLine());
+				if(yearInput == 0) {
+					throw new RuntimeException("Repair date year cannot be left blank.");
+				}
+				if(yearInput <= 0 || yearInput > 9999) {
+					throw new RuntimeException("Please input valid year (1 - 9999).");
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
 	  
-	  Date repairDate = new Date(yearInput, monthInput, dayInput);
+		// Checking for leap year.
+		if(yearInput % 4 == 0) {
+			if(yearInput % 100 == 0) {
+				if(yearInput % 400 == 0) {
+					isLeap = true;
+				} else {
+					isLeap = false;
+				}
+			} else {
+				isLeap = true;
+			}
+		} else {
+			isLeap = false;
+		}
 	  
-      // ...
+		while(true) {
+			System.out.print("Input Repair date month: ");
+			try {
+				monthInput = Integer.parseInt(in.readLine());
+				if(monthInput == 0) {
+					throw new RuntimeException("Repair date month cannot be left blank.");
+				}
+				if(monthInput <= 0 || monthInput > 12) {
+					throw new RuntimeException("Please input valid month (1 - 12).");
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
+	  
+		while(true) {
+			System.out.print("Input Repair date day: ");
+			try {
+				dayInput = Integer.parseInt(in.readLine());
+				if(dayInput == 0) {
+					throw new RuntimeException("Repair date day cannot be left blank.");
+				}
+				if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
+					if(dayInput < 0 || dayInput > 31) {
+						throw new RuntimeException("Please input valid date.");
+					}
+				}
+				if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
+					if(dayInput < 0 || dayInput > 30) {
+						throw new RuntimeException("Please input valid date.");
+					}
+				}
+				if(monthInput == 2) {
+					if(isLeap) {
+						if(dayInput < 0 || dayInput > 29) {
+							throw new RuntimeException("Please input valid date.");
+						}
+					} else {
+						if(dayInput < 0 || dayInput > 28) {
+							throw new RuntimeException("Please input valid date.");
+						}
+					}
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		};
+	  
+		Date repairDate = new Date(yearInput, monthInput, dayInput);
+	  
+		String query;
+		try {
+			query = "INSERT INTO Repair (rID, hotelID, roomNo, mCompany, repairDate, description, repairType) VALUES (" + repairID + ", \'" + hotelID + "\', \'" + roomNum + "\', \'" + maintCompany + "\', \'" + repairDate + "\', \'" + description + "\', \'" + repairType + "\');";
+		} catch (Exception e) {
+			System.err.println("Query failed: " + e.getMessage());
+	    }
+	  // ...
       // ...
    }//end addRepair
 
