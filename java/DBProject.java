@@ -388,6 +388,65 @@ public class DBProject {
 
    public static void addMaintenanceCompany(DBProject esql){
       // Given maintenance Company details add the maintenance company in the DB
+		
+		int compID;
+		do {
+			System.out.print("Input Company ID: ");
+			try {
+				compID = Integer.parseInt(in.readLine());
+				break;
+			}catch(Execption e) {
+				System.out.println("This compID does not exist!");
+				continue;
+			}
+		}while (true);
+		
+		string compName;
+		do {
+			System.out.print("Input Company Name: ");
+			try {
+				compName = in.readLine();
+				if(compName.length() > 30) {
+					throw new RuntimeException("Company name cannot be longer than 30 characters");
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		}while (true);	  
+		
+		string compAddress;
+		do {
+			SYstem.out.print("Input Company Address: ");
+			try {
+				compAddress = in.readLine();
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		}while (true);
+		
+		char compCertified;
+		boolean isCertified;
+		do {
+			System.out.print("Is this comapny certified? (y/n): ");
+			try {
+				compCertified = in.readLine();
+				if(compCertified == 'y' || compCertified == 'Y') {
+					isCertified = true;
+				} else if(compCertified == 'n' || compCertified == 'N') {
+					isCertified = false;
+				} else {
+					throw new RuntimeException("Please enter \'y\' or \'n\'");
+				}
+				break;
+			} catch (Exception e) {
+				System.out.println("Your input is invalid!");
+				continue;
+			}
+		}while (true);
       // ...
       // ...
    }//end addMaintenanceCompany
