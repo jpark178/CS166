@@ -373,7 +373,7 @@ public class DBProject {
    	};
    	Date DOB = new Date(yearInput,monthInput,dayInput);
 
-   	GenderType gender;
+   	String gender;
    	while(true){
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
@@ -430,7 +430,7 @@ public class DBProject {
     	System.out.print("Input the Room Type: ");
     	try{
     		roomType = in.readLine();
-    		if(roomType <= 0 || roomType > 10) {
+    		if(roomType.length() <= 0 || roomType.length() > 10) {
     			throw new RuntimeException("RoomType cannot be longer than 10 characters!");
     		}
     		break;
