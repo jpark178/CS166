@@ -591,12 +591,12 @@ public class DBProject {
       // Your code goes here.
       int hotelID;
       int roomNo;
-      String fName;
+      int customerID;
 
       while(true){
-        System.out.print("Please input Customer first name: ");
+        System.out.print("Please input Customer ID: ");
         try{
-          fName = in.readLine();
+          customerID = Integer.parseInt(in.readLine());
           break;
         }catch (Exception e) {
           System.out.println("Your Input is invalid!");
@@ -626,8 +626,30 @@ public class DBProject {
         }
       }
       String query;
+      String input;
+      int bID;
       try{
-      	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + 
+      	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
+      	if(esql.executeQuery(query) == 0) {
+      		while(true){
+      			System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
+      			try{
+      				input = in.readLine();
+      				if(input == "y" || input == "Y") {
+						while(true){
+							System.out.print("Please input Booking Number: ");
+							try{
+								bID = Integer.parseInt(in.readLine());
+								break;
+							}
+						}catch (Exception e) {
+							System.out.println("Your input is invalid!");
+						}
+      				}
+      				
+      			}
+      		}
+      	}
       }
       // ...
       // ...
