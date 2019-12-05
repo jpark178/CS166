@@ -551,6 +551,43 @@ public class DBProject {
    public static void bookRoom(DBProject esql){
 	  // Given hotelID, roomNo and customer Name create a booking in the DB 
       // Your code goes here.
+      int hotelID;
+      int roomNo;
+      String fName;
+      String lName;
+      while(true){
+        System.out.print("Please input Customer fName: ");
+        try{
+          fName = in.readLine();
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+      while(true){
+        System.out.print("Please input Hotel ID: ");
+        try{
+          hotelID = Integer.parseInt(in.readLine());
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+
+      while(true){
+        System.out.print("Please input Room Number: ");
+        try{
+          roomNo = Integer.parseInt(in.readLine());
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+
+
       // ...
       // ...
    }//end bookRoom
