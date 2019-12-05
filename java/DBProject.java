@@ -330,8 +330,8 @@ public class DBProject {
    	};
 
    	int yearInput;
-   	int bookingmonth;
-   	int bookingday;
+   	int monthInput;
+   	int dayInput;
    	while(true){
    		System.out.print("Input Customer birth year: ");
    		try {
@@ -348,8 +348,8 @@ public class DBProject {
    	while(true){
    		System.out.print("Input Customer birth month: ");
    		try {
-   			bookingmonth = Integer.parseInt(in.readLine());
-   			if(bookingmonth <= 0 || bookingmonth > 12) {
+   			monthInput = Integer.parseInt(in.readLine());
+   			if(monthInput <= 0 || monthInput > 12) {
    				throw new RuntimeException("Customer birth month cannot be left blank and cannot be greater than 12 (December)");
    			}
    			break;
@@ -361,8 +361,8 @@ public class DBProject {
    	while(true){
    		System.out.print("Input Customer birth day: ");
    		try {
-   			bookingday = Integer.parseInt(in.readLine());
-   			if(bookingday <= 0 || bookingday > 31) {
+   			dayInput = Integer.parseInt(in.readLine());
+   			if(dayInput <= 0 || dayInput > 31) {
    				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
    			break;
@@ -371,7 +371,7 @@ public class DBProject {
    			continue;
    		}
    	};
-   	Date DOB = new Date(yearInput,bookingmonth,bookingday);
+   	Date DOB = new Date(yearInput,monthInput,dayInput);
 
    	String gender;
    	while(true){
@@ -784,6 +784,9 @@ public class DBProject {
                     System.out.println("Your input is invalid!");
                   }
                 }
+                try{
+                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingdate, noOfPeople, price) VALUES"
+                }
               }else if(input != "n" || input != "N") {
                 throw new RuntimeException("Your input is invalid!");
               }
@@ -793,7 +796,11 @@ public class DBProject {
               continue;
             }
       		}
-      	}
+      	}else {
+          while(true){
+
+          }
+        }
       }
     }
       // ...
