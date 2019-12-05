@@ -805,13 +805,13 @@ public class DBProject {
                   			System.out.print("Please input Booking Date Year: ");
                   			try{
                     			bookingyear = Integer.parseInt(in.readLine());
-                    		if(bookingyear == 0) {
-                      			throw new RuntimeException("Booking date year cannot be left blank.");
-                    		}
-                    		if(bookingyear < 0 || bookingyear > 9999) {
-                      			throw new RuntimeException("Please input valid year (1 - 9999).");
-                    		}
-                    		break;
+                    			if(bookingyear == 0) {
+                      				throw new RuntimeException("Booking date year cannot be left blank.");
+                    			}
+                    			if(bookingyear < 0 || bookingyear > 9999) {
+                      				throw new RuntimeException("Please input valid year (1 - 9999).");
+                    			}
+                    			break;
                   			}catch(Exception e) {
                     			System.out.println("Your input is invalid");
                   			}
@@ -852,7 +852,10 @@ public class DBProject {
                   			}catch(Exception e) {
                     			System.out.println("Your input is invalid");
                   		}
-                		Date bookingDate = new Date(bookingyear, bookingmonth, bookingday);
+                  		Date bookingDate = new Date(bookingyear, bookingmonth, bookingday);
+                		}
+                	}
+                
                 while(true){
                  System.out.print("Please input the number of People for the Booking: ");
                  try{
