@@ -947,7 +947,7 @@ public class DBProject {
                   }
                 }
                 try{
-                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingdate, noOfPeople, price) VALUES"
+                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingdate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + bookingdate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
                 }
               }else if(input != "n" || input != "N") {
                 throw new RuntimeException("Your input is invalid!");
@@ -958,13 +958,14 @@ public class DBProject {
               continue;
             }
       		}
-      	}else {
+      	}else { // if NOT n or N <=== if anything else , runtimeexception
           while(true){
 
           }
         }
+      }catch(Exception e){
+        System.out.println("Your input is invalid!");
       }
-    }
       // ...
       // ...
    }//end bookRoom
@@ -1020,6 +1021,7 @@ public class DBProject {
    
    public static void totalCostForCustomer(DBProject esql){
 	  // Given a hotelID, customer Name and date range get the total cost incurred by the customer
+    //PRICE PER DAY = ROOM COST PER DAY
       // Your code goes here.
       // ...
       // ...
