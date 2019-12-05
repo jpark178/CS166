@@ -856,44 +856,38 @@ public class DBProject {
                 		}
                 	}
                 
-                while(true){
-                 System.out.print("Please input the number of People for the Booking: ");
-                 try{
-                    noOfPeople = Integer.parseInt(in.readLine());
-                    break;
-                 }catch (Exception e) {
-                   System.out.println("Your input is invalid!");
-                  }
-                }
+                	while(true){
+                 		System.out.print("Please input the number of People for the Booking: ");
+                 		try{
+                    		noOfPeople = Integer.parseInt(in.readLine());
+                    		break;
+                 		}catch (Exception e) {
+                   			System.out.println("Your input is invalid!");
+                  		}
+                	}
                 //PRICE IS DATATYPE NUMERIC(6,2) XXXXXX.XX <==== FIX
-                while(true) {
-                  System.out.print("Please input the Price: ");
-                  try{
-                    price = Integer.parseInt(in.readLine());
-                    break;
-                  }catch(Exception e) {
-                    System.out.println("Your input is invalid!");
-                  }
-                }
-                try{
-                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + bookingDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-                  esql.executeUpdate(query);
-                }catch(Exception e){
-                  System.out.println("Your input is invalid!");
-                }
-              }else if(input != "n" || input != "N") {
-                throw new RuntimeException("Your input is invalid!");
-              }
-              break;
-      			}catch(Exception e){
-              System.out.println("Your input is invalid!");
-              continue;
+                	while(true) {
+                  		System.out.print("Please input the Price: ");
+                  		try{
+                    		price = Integer.parseInt(in.readLine());
+                    		break;
+                  		}catch(Exception e) {
+                    		System.out.println("Your input is invalid!");
+                  		}
+                	}
+                	try{
+                  		query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + bookingDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
+                  		esql.executeUpdate(query);
+                	}catch(Exception e){
+                  		System.out.println("Your input is invalid!");
+                	}
+            	} else if(input != "n" || input != "N") {
+                	throw new RuntimeException("Your input is invalid!");
+              	}
+      		}catch(Exception e){
+            	System.out.println("Your input is invalid!");
+              	continue;
             }
-      		}
-      	}else { // if NOT n or N <=== if anything else , runtimeexception
-          while(true){
-
-          }
         }
       }catch(Exception e){
         System.out.println("Your input is invalid!");
