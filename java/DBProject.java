@@ -533,7 +533,7 @@ public class DBProject {
       while(true) {
 		  System.out.print("Input repair ID: ");
 		  try {
-			  roomID = Integer.parseInt(in.readLine());
+			  repairID = Integer.parseInt(in.readLine());
 			  break;
 		  } catch (Exception e) {
 			  System.out.println("Your input is invalid!");
