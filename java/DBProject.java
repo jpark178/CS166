@@ -257,7 +257,7 @@ public class DBProject {
 	  // Given customer details add the customer in the DB 
       // Your code goes here.
    	int customerID;
-   	do {
+   	while(true){
    		System.out.print("Input Customer ID: ");
    		try {
    			customerID = Integer.parseInt(in.readLine());
@@ -266,10 +266,10 @@ public class DBProject {
    			System.out.println("This customerID does not exist!");
    			continue;
    		}
-   	}while (true);
+   	};
 
    	string fName;
-   	do {
+   	while(true){
    		System.out.print("Input Customer first name: ");
    		try {
    			fName = in.readLine();
@@ -281,10 +281,10 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
+   	};
 
    	string lName;
-   	do {
+   	while(true){
    		System.out.print("Input Customer last name: ");
    		try {
    			lName = in.readLine();
@@ -296,10 +296,10 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
+   	};
 
    	string address;
-   	do {
+   	while(true){
    		System.out.print("Input Customer address: ");
    		try {
    			address = in.readLine();
@@ -311,10 +311,10 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
+   	};
 
    	int phNo;
-   	do {
+   	while(true){
    		System.out.print("Input Customer phone number: ");
    		try {
    			phNo = Integer.parseInt(in.readLine());
@@ -326,12 +326,12 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
+   	};
 
    	int yearInput;
    	int monthInput;
    	int dayInput;
-   	do {
+   	while(true){
    		System.out.print("Input Customer birth year: ");
    		try {
    			yearInput = Integer.parseInt(in.readLine());
@@ -343,8 +343,8 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
-   	do {
+   	};
+   	while(true){
    		System.out.print("Input Customer birth month: ");
    		try {
    			monthInput = Integer.parseInt(in.readLine());
@@ -356,8 +356,8 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
-   	do {
+   	};
+   	while(true){
    		System.out.print("Input Customer birth day: ");
    		try {
    			dayInput = Integer.parseInt(in.readLine());
@@ -369,18 +369,83 @@ public class DBProject {
    			System.out.println("Your input is invalid!");
    			continue;
    		}
-   	}while (true);
-
+   	};
    	Date DOB = new Date(yearInput,monthInput,dayInput);
 
    	GenderType gender;
+   	while(true){
+   		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
+   		try{
+   			gender = in.readLine();
+   			if(gender != 'Male' || gender != 'Female' || gender != 'Other') {
+   				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
+   			}
+   			break;
+   		}catch (Exception e) {
+   			System.out.println("Your Input is invalid!");
+   			continue;
+   		}
+   	}
 
-      // ...
-      // ...
+    string query;
+    try{
+   		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + gender + "\');";
+   		esql.executeQuery(query);
+    }catch(Exception e) {
+    	System.err.println("Query failed: " + e.getMessage());
+    }
+ 	// ...
+ 	// ...
    }//end addCustomer
 
    public static void addRoom(DBProject esql){
 	  // Given room details add the room in the DB
+   	Numeric hotelID;
+   	while(true){
+   		System.out.print("Input the hotelID for the room: ");
+   		try{
+   			hotelID = Integer.parseInt(in.readLine());
+   			break;
+   		}catch (Exception e) {
+   			System.out.println("Your Input is invalid!");
+   			continue;
+   		}
+   	}
+
+   	Numeric roomNo;
+   	while(true){
+   		System.out.print("Input the Room Number: ");
+   		try{
+   		roomNo = Integer.parseInt(in.readLine());
+   		break;
+   		}catch (Exception e) {
+   			System.out.println("Your Input is invalid!");
+   			continue;
+   		}
+   	}
+
+    string roomType;
+    while(true){
+    	System.out.print("Input the Room Type: ");
+    	try{
+    		roomType = in.readLine();
+    		if(roomType <= 0 || roomType > 10) {
+    			throw new RuntimeException("RoomType cannot be longer than 10 characters!");
+    		}
+    		break;
+    	}catch (Exception e) {
+    		System.out.println("Your input is invalid!");
+    		continue;
+    	}
+    }
+
+    string query;
+    try{
+   		query = "INSERT INTO Room ( hotelID, roomNo, roomType) VALUES (" + hotelID + ", \'" + roomNo + "\', \'" + roomType + "\');";
+   		esql.executeQuery(query);
+    }catch(Exception e) {
+    	System.err.println("Query failed: " + e.getMessage());
+    }
       // Your code goes here.
       // ...
       // ...
