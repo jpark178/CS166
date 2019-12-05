@@ -500,9 +500,9 @@ public class DBProject {
 			System.out.print("Is this comapny certified? (y/n): ");
 			try {
 				compCertified = in.readLine();
-				if(compCertified == 'y' || compCertified == 'Y') {
+				if(compCertified == "y" || compCertified == "Y") {
 					isCertified = true;
-				} else if(compCertified == 'n' || compCertified == 'N') {
+				} else if(compCertified == "n" || compCertified == "N") {
 					isCertified = false;
 				} else {
 					throw new RuntimeException("Please enter \'y\' or \'n\'");
