@@ -775,15 +775,15 @@ public class DBProject {
           continue;
         }
       }
-      String query;
-      String input;
-      int bID;
-      int bookingyear;
-      int bookingmonth;
-      int bookingday;
-      int noOfPeople;
-      int price;
-      try{
+    String query;
+    String input;
+    int bID;
+    int bookingyear;
+    int bookingmonth;
+    int bookingday;
+    int noOfPeople;
+    int price;
+    try{
       	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
       	if(esql.executeQuery(query) == 0) {
       		while(true){
@@ -888,9 +888,10 @@ public class DBProject {
               		continue;
             	}
         	}
-      	}catch(Exception e){
-        	System.out.println("Your input is invalid!");
       	}
+    }catch(Exception e){
+        System.out.println("Your input is invalid!");
+    }
       // ...
       // ...
    }//end bookRoom
