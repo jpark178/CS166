@@ -529,9 +529,9 @@ public class DBProject {
 	  // Given repair details add repair in the DB
       // Your code goes here.
       
-      int roomID;
-      do {
-		  System.out.print("Input room ID: ");
+      int repairID;
+      while(true) {
+		  System.out.print("Input repair ID: ");
 		  try {
 			  roomID = Integer.parseInt(in.readLine());
 			  break;
@@ -539,9 +539,47 @@ public class DBProject {
 			  System.out.println("Your input is invalid!");
 			  continue;
 		  }
-	  }while (true);
+	  };
 	  
 	  int hotelID;
+	  while(true) {
+		  System.out.print("Input hotel ID: ");
+		  try {
+			  hotelID = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  };
+	  
+	  int roomNum;
+	  while(true) {
+		  System.out.print("Input room number: ");
+		  try {
+			  roomNum = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  };
+	  
+	  int maintCompany;
+	  while(true) {
+		  System.out.print("Input maintenance company ID: ");
+		  try {
+			  maintCompany = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  };
+	  
+	  String repairDate;
+	  
+		  
 		  
       
       // ...
