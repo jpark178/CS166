@@ -512,6 +512,7 @@ public class DBProject {
 				continue;
 			}
 		}while (true);
+		
       // ...
       // ...
    }//end addMaintenanceCompany
