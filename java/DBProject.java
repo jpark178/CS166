@@ -333,11 +333,14 @@ public class DBProject {
    	int monthInput;
    	int dayInput;
    	boolean isLeap;
+<<<<<<< HEAD
    	
    	int bookingmonth;
    	int bookingday;
    	int monthInput;
    	int dayInput;
+=======
+>>>>>>> 8f82d2a6dae958bee52706b5dd16a2e2434fefc1
    	while(true){
    		System.out.print("Input Customer birth year: ");
    		try {
@@ -387,6 +390,7 @@ public class DBProject {
    		System.out.print("Input Customer birth day: ");
    		try {
    			dayInput = Integer.parseInt(in.readLine());
+<<<<<<< HEAD
    			if(dayInput == 0) {
    			bookingday = Integer.parseInt(in.readLine());
    			if(bookingday <= 0 || bookingday > 31) {
@@ -394,6 +398,8 @@ public class DBProject {
    			if(dayInput <= 0 || dayInput > 31) {
    				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
+=======
+>>>>>>> 8f82d2a6dae958bee52706b5dd16a2e2434fefc1
    			if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthINput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
 				if(dayInput < 0 || dayInput > 31) {
 					throw new RuntimeException("Please input valid date.");
@@ -665,8 +671,8 @@ public class DBProject {
 		}
 
 	  int yearInput;
-	  int bookingmonth;
-	  int bookingday;
+	  int monthInput;
+	  int dayInput;
 	  
 	  while(true) {
 		  System.out.print("Input Repair date year: ");
@@ -687,11 +693,11 @@ public class DBProject {
 	  while(true) {
 		  System.out.print("Input Repair date month: ");
 		  try {
-			  bookingmonth = Integer.parseInt(in.readLine());
-			  if(bookingmonth == 0) {
+			  monthInput = Integer.parseInt(in.readLine());
+			  if(monthInput == 0) {
 				  throw new RuntimeException("Repair date month cannot be left blank.");
 			  }
-			  if(bookingmonth < 0 || bookingmonth > 12) {
+			  if(monthInput < 0 || monthInput > 12) {
 				  throw new RuntimeException("Please input valid month (1 - 12).");
 			  }
 			  break;
@@ -703,22 +709,22 @@ public class DBProject {
 	  while(true) {
 		  System.out.print("Input Repair date day: ");
 		  try {
-			  bookingday = Integer.parseInt(in.readLine());
-			  if(bookingday == 0) {
+			  dayInput = Integer.parseInt(in.readLine());
+			  if(dayInput == 0) {
 				  throw new RuntimeException("Repair date day cannot be left blank.");
 			  }
-			  if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
-				  if(bookingday < 0 || bookingday > 31) {
+			  if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
+				  if(dayInput < 0 || dayInput > 31) {
 					  throw new RuntimeException("Please input valid date.");
 				  }
 			  }
-			  if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
-				  if(bookingday < 0 || bookingday > 30) {
+			  if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
+				  if(dayInput < 0 || dayInput > 30) {
 					  throw new RuntimeException("Please input valid date.");
 				  }
 			  }
-			  if(bookingmonth == 2) {
-				  if(bookingday < 0 || bookingday > 28) {
+			  if(monthInput == 2) {
+				  if(dayInput < 0 || dayInput > 28) {
 					  throw new RuntimeException("Please input valid date.");
 				  }
 			  }
