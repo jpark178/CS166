@@ -921,6 +921,9 @@ public class DBProject {
                 }
                 try{
                   query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingdate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + bookingdate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
+                  esql.executeUpdate(query);
+                }catch(Exception e){
+                  System.out.println("Your input is invalid!");
                 }
               }else if(input != "n" || input != "N") {
                 throw new RuntimeException("Your input is invalid!");
