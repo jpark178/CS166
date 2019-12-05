@@ -712,6 +712,7 @@ public class DBProject {
       		}
       	}
       }
+    }
       // ...
       // ...
    }//end bookRoom
