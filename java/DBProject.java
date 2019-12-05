@@ -268,7 +268,7 @@ public class DBProject {
    		}
    	};
 
-   	char fName;
+   	String fName;
    	while(true){
    		System.out.print("Input Customer first name: ");
    		try {
@@ -283,7 +283,7 @@ public class DBProject {
    		}
    	};
 
-   	char lName;
+   	String lName;
    	while(true){
    		System.out.print("Input Customer last name: ");
    		try {
@@ -298,7 +298,8 @@ public class DBProject {
    		}
    	};
 
-   	char address;
+   	
+    String address;
    	while(true){
    		System.out.print("Input Customer address: ");
    		try {
@@ -387,7 +388,7 @@ public class DBProject {
    		}
    	}
 
-    string query;
+    String query;
     try{
    		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + gender + "\');";
    		esql.executeQuery(query);
@@ -424,7 +425,7 @@ public class DBProject {
    		}
    	}
 
-    string roomType;
+    String roomType;
     while(true){
     	System.out.print("Input the Room Type: ");
     	try{
@@ -439,7 +440,7 @@ public class DBProject {
     	}
     }
 
-    string query;
+    String query;
     try{
    		query = "INSERT INTO Room ( hotelID, roomNo, roomType) VALUES (" + hotelID + ", \'" + roomNo + "\', \'" + roomType + "\');";
    		esql.executeQuery(query);
