@@ -401,7 +401,7 @@ public class DBProject {
 
    public static void addRoom(DBProject esql){
 	  // Given room details add the room in the DB
-   	Numeric hotelID;
+   	int hotelID;
    	while(true){
    		System.out.print("Input the hotelID for the room: ");
    		try{
@@ -413,7 +413,7 @@ public class DBProject {
    		}
    	}
 
-   	Numeric roomNo;
+   	int roomNo;
    	while(true){
    		System.out.print("Input the Room Number: ");
    		try{
