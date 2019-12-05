@@ -262,13 +262,13 @@ public class DBProject {
    		try {
    			customerID = Integer.parseInt(in.readLine());
    			break;
-   		}catch(Execption e) {
+   		}catch(Exception e) {
    			System.out.println("This customerID does not exist!");
    			continue;
    		}
    	};
 
-   	string fName;
+   	char fName;
    	while(true){
    		System.out.print("Input Customer first name: ");
    		try {
@@ -283,7 +283,7 @@ public class DBProject {
    		}
    	};
 
-   	string lName;
+   	char lName;
    	while(true){
    		System.out.print("Input Customer last name: ");
    		try {
@@ -298,7 +298,7 @@ public class DBProject {
    		}
    	};
 
-   	string address;
+   	char address;
    	while(true){
    		System.out.print("Input Customer address: ");
    		try {
