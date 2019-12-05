@@ -791,69 +791,68 @@ public class DBProject {
       			try{
       				input = in.readLine();
       				if(input == "y" || input == "Y") {
-						    while(true){
-							   System.out.print("Please input Booking Number: ");
-							   try{
-								    bID = Integer.parseInt(in.readLine());
-								    break;
-							   }catch (Exception e) {
-							     System.out.println("Your input is invalid!");
-						      }
-      				  }
-                while(true){
-                  System.out.println("Booking Date is required!");
-                  System.out.print("Please input Booking Date Year: ");
-                  try{
-                    bookingyear = Integer.parseInt(in.readLine());
-                    if(bookingyear == 0) {
-                      throw new RuntimeException("Booking date year cannot be left blank.");
-                    }
-                    if(bookingyear < 0 || bookingyear > 9999) {
-                      throw new RuntimeException("Please input valid year (1 - 9999).");
-                    }
-                    break;
-                  }catch(Exception e) {
-                    System.out.println("Your input is invalid");
-                  }
-                  System.out.print("Please input Booking Date Month: ");
-                  try{
-                    bookingmonth = Integer.parseInt(in.readLine());
-                    if(bookingmonth == 0) {
-                      throw new RuntimeException("Booking date month cannot be left blank.");
-                    }
-                    if(bookingmonth < 0 || bookingmonth > 12) {
-                      throw new RuntimeException("Please input valid month (1 - 12).");
-                    }
-                    break;
-                  }catch(Exception e) {
-                    System.out.println("Your input is invalid");
-                  }
-                  try{
-                    bookingday = Integer.parseInt(in.readLine());
-                    if(bookingday == 0) {
-                      throw new RuntimeException("Booking date day cannot be left blank.");
-                    }
-                    if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
-                      if(bookingday < 0 || bookingday > 31) {
-                        throw new RuntimeException("Please input valid date.");
-                      }
-                    }
-                    if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
-                      if(bookingday < 0 || bookingday > 30) {
-                        throw new RuntimeException("Please input valid date.");
-                      }
-                    }
-                    if(bookingmonth == 2) {
-                      if(bookingday < 0 || bookingday > 28) {
-                        throw new RuntimeException("Please input valid date.");
-                      }
-                    }
-                    break;
-                  }catch(Exception e) {
-                    System.out.println("Your input is invalid");
-                  }
-                }
-                Date bookingDate = new Date(bookingyear, bookingmonth, bookingday);
+						while(true){
+							System.out.print("Please input Booking Number: ");
+							try{
+								bID = Integer.parseInt(in.readLine());
+								break;
+							}catch (Exception e) {
+							    System.out.println("Your input is invalid!");
+						    }
+      				  	}
+                		while(true){
+                  			System.out.println("Booking Date is required!");
+                  			System.out.print("Please input Booking Date Year: ");
+                  			try{
+                    			bookingyear = Integer.parseInt(in.readLine());
+                    		if(bookingyear == 0) {
+                      			throw new RuntimeException("Booking date year cannot be left blank.");
+                    		}
+                    		if(bookingyear < 0 || bookingyear > 9999) {
+                      			throw new RuntimeException("Please input valid year (1 - 9999).");
+                    		}
+                    		break;
+                  			}catch(Exception e) {
+                    			System.out.println("Your input is invalid");
+                  			}
+                  			System.out.print("Please input Booking Date Month: ");
+                  			try{
+                    			bookingmonth = Integer.parseInt(in.readLine());
+                    			if(bookingmonth == 0) {
+                      				throw new RuntimeException("Booking date month cannot be left blank.");
+                    			}
+                    			if(bookingmonth < 0 || bookingmonth > 12) {
+                      				throw new RuntimeException("Please input valid month (1 - 12).");
+                    			}
+                    			break;
+                  			}catch(Exception e) {
+                    			System.out.println("Your input is invalid");
+               	   			}
+                  			try{
+                    			bookingday = Integer.parseInt(in.readLine());
+                    			if(bookingday == 0) {
+                      				throw new RuntimeException("Booking date day cannot be left blank.");
+                    			}
+                    			if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
+                      				if(bookingday < 0 || bookingday > 31) {
+                        				throw new RuntimeException("Please input valid date.");
+                      				}
+                    			}
+                    			if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
+                      				if(bookingday < 0 || bookingday > 30) {
+                        				throw new RuntimeException("Please input valid date.");
+                      				}
+                    			}
+                    			if(bookingmonth == 2) {
+                      				if(bookingday < 0 || bookingday > 28) {
+                        				throw new RuntimeException("Please input valid date.");
+                      				}
+                    			}
+                    			break;
+                  			}catch(Exception e) {
+                    			System.out.println("Your input is invalid");
+                  		}
+                		Date bookingDate = new Date(bookingyear, bookingmonth, bookingday);
                 while(true){
                  System.out.print("Please input the number of People for the Booking: ");
                  try{
