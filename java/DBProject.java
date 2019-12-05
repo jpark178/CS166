@@ -330,20 +330,14 @@ public class DBProject {
    	};
 
    	int yearInput;
-<<<<<<< HEAD
-<<<<<<< HEAD
    	int monthInput;
    	int dayInput;
    	boolean isLeap;
    	
-=======
    	int bookingmonth;
    	int bookingday;
->>>>>>> 6cdf1af9c4b557445b57bfdd96a5d2de16c55654
-=======
    	int monthInput;
    	int dayInput;
->>>>>>> a9c2a26dd999f23e798ad1332dfb643ab71ecd0c
    	while(true){
    		System.out.print("Input Customer birth year: ");
    		try {
@@ -392,18 +386,12 @@ public class DBProject {
    	while(true){
    		System.out.print("Input Customer birth day: ");
    		try {
-<<<<<<< HEAD
-<<<<<<< HEAD
    			dayInput = Integer.parseInt(in.readLine());
    			if(dayInput == 0) {
-=======
    			bookingday = Integer.parseInt(in.readLine());
    			if(bookingday <= 0 || bookingday > 31) {
->>>>>>> 6cdf1af9c4b557445b57bfdd96a5d2de16c55654
-=======
    			dayInput = Integer.parseInt(in.readLine());
    			if(dayInput <= 0 || dayInput > 31) {
->>>>>>> a9c2a26dd999f23e798ad1332dfb643ab71ecd0c
    				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
    			if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthINput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
@@ -639,7 +627,6 @@ public class DBProject {
 			}
 		};
 	  
-<<<<<<< HEAD
 		int yearInput;
 		int monthInput;
 		int dayInput;
@@ -676,7 +663,7 @@ public class DBProject {
 		} else {
 			isLeap = false;
 		}
-=======
+
 	  int yearInput;
 	  int bookingmonth;
 	  int bookingday;
@@ -743,7 +730,6 @@ public class DBProject {
 	  };
 	  
 	  Date repairDate = new Date(yearInput, bookingmonth, bookingday);
->>>>>>> 6cdf1af9c4b557445b57bfdd96a5d2de16c55654
 	  
 		while(true) {
 			System.out.print("Input Repair date month: ");
