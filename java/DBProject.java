@@ -690,6 +690,7 @@ public class DBProject {
       String query;
       String input;
       int bID;
+      Date bookingDate;
       try{
       	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
       	if(esql.executeQuery(query) == 0) {
@@ -705,9 +706,15 @@ public class DBProject {
 								    break;
 							   }catch (Exception e) {
 							     System.out.println("Your input is invalid!");
-						    }
-      				}
-      				
+						      }
+      				  }
+                while(true){
+                  System.out.print("Please input Booking Date: ");
+                  try{
+                    bookingDate = in.readLine();
+                  }
+                }
+              }
       			}
       		}
       	}
