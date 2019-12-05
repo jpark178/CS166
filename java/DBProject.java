@@ -262,13 +262,13 @@ public class DBProject {
    		try {
    			customerID = Integer.parseInt(in.readLine());
    			break;
-   		}catch(Execption e) {
+   		}catch(Exception e) {
    			System.out.println("This customerID does not exist!");
    			continue;
    		}
    	};
 
-   	string fName;
+   	String fName;
    	while(true){
    		System.out.print("Input Customer first name: ");
    		try {
@@ -283,7 +283,7 @@ public class DBProject {
    		}
    	};
 
-   	string lName;
+   	String lName;
    	while(true){
    		System.out.print("Input Customer last name: ");
    		try {
@@ -298,7 +298,8 @@ public class DBProject {
    		}
    	};
 
-   	string address;
+   	
+    String address;
    	while(true){
    		System.out.print("Input Customer address: ");
    		try {
@@ -318,7 +319,7 @@ public class DBProject {
    		System.out.print("Input Customer phone number: ");
    		try {
    			phNo = Integer.parseInt(in.readLine());
-   			if(phNo.length() == 0) {
+   			if(phNo == 0) {
    				throw new RuntimeException("Customer phone number cannot be left blank");
    			}
    			break;
@@ -335,7 +336,7 @@ public class DBProject {
    		System.out.print("Input Customer birth year: ");
    		try {
    			yearInput = Integer.parseInt(in.readLine());
-   			if(yearInput.length() == 0) {
+   			if(yearInput == 0) {
    				throw new RuntimeException("Customer birth year cannot be left blank");
    			}
    			break;
@@ -348,7 +349,7 @@ public class DBProject {
    		System.out.print("Input Customer birth month: ");
    		try {
    			monthInput = Integer.parseInt(in.readLine());
-   			if(monthInput.length() <= 0 || monthInput.length() > 12) {
+   			if(monthInput <= 0 || monthInput > 12) {
    				throw new RuntimeException("Customer birth month cannot be left blank and cannot be greater than 12 (December)");
    			}
    			break;
@@ -361,8 +362,8 @@ public class DBProject {
    		System.out.print("Input Customer birth day: ");
    		try {
    			dayInput = Integer.parseInt(in.readLine());
-   			if(dayInput.length() == 0) {
-   				throw new RuntimeException("Customer birth day cannot be left blank");
+   			if(dayInput <= 0 || dayInput > 31) {
+   				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
    			break;
    		}catch (Exception e) {
@@ -377,7 +378,7 @@ public class DBProject {
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
    			gender = in.readLine();
-   			if(gender != 'Male' || gender != 'Female' || gender != 'Other') {
+   			if(gender != "Male" || gender != "Female" || gender != "Other") {
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
    			}
    			break;
@@ -387,7 +388,7 @@ public class DBProject {
    		}
    	}
 
-    string query;
+    String query;
     try{
    		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + gender + "\');";
    		esql.executeQuery(query);
@@ -424,7 +425,7 @@ public class DBProject {
    		}
    	}
 
-    string roomType;
+    String roomType;
     while(true){
     	System.out.print("Input the Room Type: ");
     	try{
@@ -439,7 +440,7 @@ public class DBProject {
     	}
     }
 
-    string query;
+    String query;
     try{
    		query = "INSERT INTO Room ( hotelID, roomNo, roomType) VALUES (" + hotelID + ", \'" + roomNo + "\', \'" + roomType + "\');";
    		esql.executeQuery(query);
