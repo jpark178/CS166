@@ -377,7 +377,7 @@ public class DBProject {
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
    			gender = in.readLine();
-   			if(gender != 'Male' || gender != 'Female' || gender != 'Other') {
+   			if(gender != "Male" || gender != "Female" || gender != "Other") {
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
    			}
    			break;
