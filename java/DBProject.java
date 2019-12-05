@@ -331,6 +331,7 @@ public class DBProject {
 
    	int yearInput;
 <<<<<<< HEAD
+<<<<<<< HEAD
    	int monthInput;
    	int dayInput;
    	boolean isLeap;
@@ -339,6 +340,10 @@ public class DBProject {
    	int bookingmonth;
    	int bookingday;
 >>>>>>> 6cdf1af9c4b557445b57bfdd96a5d2de16c55654
+=======
+   	int monthInput;
+   	int dayInput;
+>>>>>>> a9c2a26dd999f23e798ad1332dfb643ab71ecd0c
    	while(true){
    		System.out.print("Input Customer birth year: ");
    		try {
@@ -374,8 +379,8 @@ public class DBProject {
    	while(true){
    		System.out.print("Input Customer birth month: ");
    		try {
-   			bookingmonth = Integer.parseInt(in.readLine());
-   			if(bookingmonth <= 0 || bookingmonth > 12) {
+   			monthInput = Integer.parseInt(in.readLine());
+   			if(monthInput <= 0 || monthInput > 12) {
    				throw new RuntimeException("Customer birth month cannot be left blank and cannot be greater than 12 (December)");
    			}
    			break;
@@ -388,12 +393,17 @@ public class DBProject {
    		System.out.print("Input Customer birth day: ");
    		try {
 <<<<<<< HEAD
+<<<<<<< HEAD
    			dayInput = Integer.parseInt(in.readLine());
    			if(dayInput == 0) {
 =======
    			bookingday = Integer.parseInt(in.readLine());
    			if(bookingday <= 0 || bookingday > 31) {
 >>>>>>> 6cdf1af9c4b557445b57bfdd96a5d2de16c55654
+=======
+   			dayInput = Integer.parseInt(in.readLine());
+   			if(dayInput <= 0 || dayInput > 31) {
+>>>>>>> a9c2a26dd999f23e798ad1332dfb643ab71ecd0c
    				throw new RuntimeException("Customer birth day cannot be left blank or be greater than the 31st!");
    			}
    			if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthINput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
@@ -423,7 +433,7 @@ public class DBProject {
    			continue;
    		}
    	};
-   	Date DOB = new Date(yearInput,bookingmonth,bookingday);
+   	Date DOB = new Date(yearInput,monthInput,dayInput);
 
    	String gender;
    	while(true){
@@ -935,6 +945,9 @@ public class DBProject {
                     System.out.println("Your input is invalid!");
                   }
                 }
+                try{
+                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingdate, noOfPeople, price) VALUES"
+                }
               }else if(input != "n" || input != "N") {
                 throw new RuntimeException("Your input is invalid!");
               }
@@ -944,7 +957,11 @@ public class DBProject {
               continue;
             }
       		}
-      	}
+      	}else {
+          while(true){
+
+          }
+        }
       }
     }
       // ...
