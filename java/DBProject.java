@@ -559,7 +559,7 @@ public class DBProject {
 		
 		String query;
 		try{
-			query = "INSERT INTO MainetenanceCompany (cmpID, name, address, isCertified) VALUES (" + compID + ", \'" + compName + "\', \'" + compAddress + "\', \'" + isCertified + "\');";
+			query = "INSERT INTO MaintenanceCompany (cmpID, name, address, isCertified) VALUES (" + compID + ", \'" + compName + "\', \'" + compAddress + "\', \'" + isCertified + "\');";
 			esql.executeUpdate(query);
 		}catch(Exception e) {
 			System.err.println("Query failed: " + e.getMessage());
