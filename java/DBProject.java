@@ -411,7 +411,7 @@ public class DBProject {
    	};
    	Date dob = new Date(yearInput,monthInput,dayInput);
 
-   	String gender;
+   	String genderS;
    	while(true){
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
@@ -424,6 +424,7 @@ public class DBProject {
    			System.out.println("Your Input is invalid!");
    			continue;
    		}
+   		GenderType gender = new GenderType(gender);
    	}
 
     String query;
