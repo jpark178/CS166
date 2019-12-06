@@ -1106,6 +1106,9 @@ public class DBProject {
    	String query;
    	try{
    		query = "SELECT C.customerID FROM Customer;";
+   		esql.executeQuery(query);
+   	}catch(Exception e){
+   		System.out.print("Query failed." + e.getMessage());
    	}
       // ...
       // ...
