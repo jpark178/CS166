@@ -1150,6 +1150,13 @@ public class DBProject {
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
       // Your code goes here.
+   	String query;
+   	try{
+   		query = "SELECT C.customerID FROM Customer;";
+   		esql.executeQuery(query);
+   	}catch(Exception e){
+   		System.out.print("Query failed." + e.getMessage());
+   	}
       // ...
       // ...
    }//end listRepairsMade
