@@ -1364,7 +1364,7 @@ public class DBProject {
 		  query = "SELECT price FROM Booking B, Customer C WHERE C.fname = " + fName + " AND C.lName = " + lName + " ORDER BY price LIMIT " + k + ";"; 
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
-		  System.err.prinln(e.getMessage());
+		  System.err.println(e.getMessage());
 	  }
       // ...
       // ...
