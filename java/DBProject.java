@@ -410,7 +410,7 @@ public class DBProject {
    			continue;
    		}
    	};
-   	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+   	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	Date finaldate = new Date(monthInput,dayInput,yearInput);
    	String dob = simpleDateFormat.format(finaldate);
 	  System.out.println("YOUR GIVEN DATE IS " + dob);
@@ -701,7 +701,7 @@ public class DBProject {
 			  continue;
 		  }
 	  };
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
     Date finaldate = new Date(monthInput,dayInput,yearInput);
     String repairDate = simpleDateFormat.format(finaldate);
     System.out.println("YOUR GIVEN DATE IS " + repairDate);
@@ -1115,7 +1115,7 @@ public class DBProject {
         continue;
       }
     };
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
     Date finaldate = new Date(monthInput,dayInput,yearInput);
     String requestDate = simpleDateFormat.format(finaldate);
     System.out.println("YOUR GIVEN DATE IS " + requestDate);
@@ -1265,7 +1265,7 @@ public class DBProject {
                 System.out.println("Your input is invalid");
             }
         }
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
         Date finaldate = new Date(checkmonth,checkday,checkyear);
         String dob = simpleDateFormat.format(finaldate);
         System.out.println("YOUR GIVEN DATE IS " + dob);
