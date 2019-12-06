@@ -416,8 +416,8 @@ public class DBProject {
    	String year = Integer.toString(yearInput);
    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
    	Date dob = new Date(yearInput,monthInput,dayInput);
-   	String finaldate = simpleDateFormat.format(dob));
-	System.out.println("YOUR GIVEN DATE IS" + finaldate);
+   	String finaldate = simpleDateFormat.format(dob);
+	  System.out.println("YOUR GIVEN DATE IS" + finaldate);
 	
    	String gender;
    	while(true){
