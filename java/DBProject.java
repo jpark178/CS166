@@ -411,12 +411,14 @@ public class DBProject {
    			continue;
    		}
    	};
-   	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+   	//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	//Date finaldate = new Date(monthInput,dayInput,yearInput);
     String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-    //Date dob = formatter.parse(finaldate);
-   	String dob = simpleDateFormat.format(finaldate);
-	  System.out.println("YOUR GIVEN DATE IS " + dob);
+    System.out.println("Your inputted date is : ");
+    System.out.println(finaldate);
+    Date dob = new SimpleDateFormat("MM-dd-yyyy").parse(finaldate);
+   	//String dob = simpleDateFormat.format(finaldate);
+
 	
    	String gender;
    	while(true){
