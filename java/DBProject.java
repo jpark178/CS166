@@ -885,7 +885,7 @@ public class DBProject {
                   				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + bookingDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
                   				esql.executeUpdate(query);
                 			}catch(Exception e){
-                  				System.out.println("Your input is invalid!");
+                  				System.out.println("Query was not executed.");
                 			}
             			} else if(input != "n" || input != "N") {
                 			throw new RuntimeException("Your input is invalid!");
@@ -920,6 +920,26 @@ public class DBProject {
    public static void numberOfAvailableRooms(DBProject esql){
 	  // Given a hotelID, get the count of rooms available  (NUM OF TOTAL ROOMS OF THE HOTEL - THE NUMBER ROOMS BOOKED)
       // Your code goes here.
+   		int hotelID;
+   		while(true){
+   			System.out.println("Please input hotel ID: ");
+   			try{
+   				hotelID = Integer.parseInt(in.readLine());
+   				break;
+   			}catch(Exception e){
+   				System.out.println("Your Input is invalid!");
+   				continue;
+   			}
+   		}
+
+   		String query;
+   		while(true){
+   			try{
+   				query = "SELECT A1.roomNo-B1.roomNo FROM (SELECT R.roomNo FROM Room R WHERE roomNo = " + roomNo ") as A1, (SELECT B.roomNo FROM Booking B WHERE roomNo = " + roomNo ") as B1 WHERE A1.roomNo = B1.roomNo";
+   				esql.executeQuery(query);
+   			}catch(Exception e) {
+   				System.out.println("Query was not executed.");
+   			}
       // ...
       // ...
    }//end numberOfAvailableRooms
