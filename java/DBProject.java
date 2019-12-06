@@ -22,6 +22,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.Date;
+import java.
 /**
  * This class defines a simple embedded SQL utility class that is designed to
  * work with PostgreSQL JDBC drivers.
@@ -1102,6 +1103,10 @@ public class DBProject {
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
       // Your code goes here.
+   	String query;
+   	try{
+   		query = "SELECT C.customerID FROM Customer;";
+   	}
       // ...
       // ...
    }//end listRepairsMade
