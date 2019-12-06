@@ -1436,7 +1436,7 @@ public class DBProject {
 	  
 	  String query;
 	  try {
-		  query = "SELECT M.name, COUNT(*) R.rID\nFROM MaintenanceCompany M, Repair R WHERE M.cmpID = R.mCompany GROUP BY M.name, HAVING COUNT(*) <= " + k + " ORDER BY R.rID DESC;";
+		  query = "SELECT M.name, COUNT(*) R.rID\nFROM MaintenanceCompany M, Repair R WHERE M.cmpID = R.mCompany GROUP BY M.name, HAVING COUNT(*) <= " + repairCount + " ORDER BY R.rID DESC LIMIT;";
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.err.println(e.getMessage());
@@ -1448,6 +1448,7 @@ public class DBProject {
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
       // Your code goes here.
+	String 
       // ...
       // ...
    }//end listRepairsMade
