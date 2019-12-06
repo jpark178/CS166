@@ -409,7 +409,7 @@ public class DBProject {
    			continue;
    		}
    	};
-   	Date dob = new Date(yearInput,monthInput,dayInput);
+   	Date dob = new Date(yearInput + "/",monthInput + "/",dayInput);
 
    	String gender;
    	while(true){
