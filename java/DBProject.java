@@ -899,6 +899,7 @@ public class DBProject {
                 			}
             			}else if(input.equals("n") || input.equals("N")) {
                 			System.out.println("Goodbye!");
+                      break;
               		}
       				}catch(Exception e){
             		System.out.println("Your input is invalid!");
