@@ -416,10 +416,8 @@ public class DBProject {
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
    			gender = in.readLine();
-   			if(!gender.equals("Male") && gender.equals("Female") && !gender.equals("Other")) {
-   				System.out.println(gender);
+   			if(!gender.equals("Male") || gender.equals("Female") || !gender.equals("Other")) {
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
-
    			}
    			break;
    		}catch (Exception e) {
@@ -538,12 +536,12 @@ public class DBProject {
 		String compCertified;
 		boolean isCertified;
 		while(true) {
-			System.out.print("Is this comapny certified? (y/n): ");
+			System.out.print("Is this company certified? (y/n): ");
 			try {
 				compCertified = in.readLine();
-				if(compCertified == "y" || compCertified == "Y") {
+				if(compCertified.equals("y") || compCertified.equals("Y")) {
 					isCertified = true;
-				} else if(compCertified == "n" || compCertified == "N") {
+				} else if(compCertified.equals("n") || compCertified.equals("N")) {
 					isCertified = false;
 				} else {
 					throw new RuntimeException("Please enter \'y\' or \'n\'");
@@ -793,7 +791,7 @@ public class DBProject {
       				System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
       				try{//try2
       					input = in.readLine();
-      					if(input == "y" || input == "Y") {
+      					if(input.equals("y") || input.equals("Y")) {
 							while(true){
 								System.out.print("Please input Booking Number: ");
 								try{//try3
@@ -890,7 +888,7 @@ public class DBProject {
                 			}catch(Exception e){
                   				System.out.println("Query was not executed.");
                 			}
-            			} else if(input != "n" || input != "N") {
+            			} else if(input.equals("n") || input.equals("N")) {
                 			throw new RuntimeException("Your input is invalid!");
               			}
       				}catch(Exception e){
