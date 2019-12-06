@@ -1295,7 +1295,7 @@ public class DBProject {
         //Date finaldate = new Date(checkmonth,checkday,checkyear);
         //String dob = simpleDateFormat.format(finaldate);
         //System.out.println("YOUR GIVEN DATE IS " + dob);
-        String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
+        String finaldate = checkmonth + "-" + checkday + "-" + checkyear;
         System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
         System.out.println(finaldate);
         //Date dob = new SimpleDateFormat.parse(finaldate);
