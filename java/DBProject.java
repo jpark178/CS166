@@ -918,7 +918,7 @@ public class DBProject {
    }//end repairRequest
    
    public static void numberOfAvailableRooms(DBProject esql){
-	  // Given a hotelID, get the count of rooms available 
+	  // Given a hotelID, get the count of rooms available  (NUM OF TOTAL ROOMS OF THE HOTEL - THE NUMBER ROOMS BOOKED)
       // Your code goes here.
       // ...
       // ...
@@ -927,6 +927,26 @@ public class DBProject {
    public static void numberOfBookedRooms(DBProject esql){
 	  // Given a hotelID, get the count of rooms booked
       // Your code goes here.
+   		int hotelID;
+   		while(true){
+   			System.out.println("Please input hotel ID: ");
+   			try{
+   				hotelID = Integer.parseInt(in.readLine());
+   				break;
+   			}catch(Exception e){
+   				System.out.println("Your Input is invalid!");
+   				continue;
+   			}
+   		}
+   		String query;
+   		try{
+   			query = "SELECT count(B.roomNo)\nFROM Booking B WHERE hotelID = " + hotelID + "\';";
+   			esql.executeQuery(query);
+   			break;
+   		}catch(Exception e){
+   			System.out.println("Your input is invalid!");
+   		}
+
       // ...
       // ...
    }//end numberOfBookedRooms
