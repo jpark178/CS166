@@ -416,12 +416,17 @@ public class DBProject {
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
    			gender = in.readLine();
-   			if(!gender.equals("Male") || !gender.equals("Female") || !gender.equals("Other")) {
+   			if(!gender.equals("Male")) {
+   				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
+   			}
+   			if(!gender.equals("Female")){
+   				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
+   			}
+   			if(!gender.equals("Other")){
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
    			}
    			break;
    		}catch (Exception e) {
-
    			System.out.println("Your Input is invalid!");
    			continue;
    		}
