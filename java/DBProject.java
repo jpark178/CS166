@@ -409,7 +409,7 @@ public class DBProject {
    			continue;
    		}
    	};
-   	Date DOB = new Date(yearInput,monthInput,dayInput);
+   	Date dob = new Date(yearInput,monthInput,dayInput);
 
    	String gender;
    	while(true){
@@ -428,7 +428,7 @@ public class DBProject {
 
     String query;
     try{
-   		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + gender + "\');";
+   		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + dob + "\',\'" + gender + "\');";
    		esql.executeQuery(query);
     }catch(Exception e) {
     	System.err.println("Query failed: " + e.getMessage());
@@ -976,6 +976,82 @@ public class DBProject {
    public static void listHotelRoomBookingsForAWeek(DBProject esql){
 	  // Given a hotelID, date - list all the rooms available for a week(including the input date) 
       // Your code goes here.
+   		int hotelID;
+   		while(true){
+   			System.out.println("Please input hotel ID: ");
+   			try{
+   				hotelID = Integer.parseInt(in.readLine());
+   				break;
+   			}catch(Exception e){
+   				System.out.println("Your Input is invalid!");
+   				continue;
+   			}
+   		}
+   		while(true){
+            System.out.print("Please input Booking Date Year: ");
+            try{
+                bookingyear = Integer.parseInt(in.readLine());
+                if(bookingyear == 0) {
+                    throw new RuntimeException("Booking date year cannot be left blank.");
+                }
+                if(bookingyear < 0 || bookingyear > 9999) {
+                    throw new RuntimeException("Please input valid year (1 - 9999).");
+                }
+                break;
+            }catch(Exception e) {
+                System.out.println("Your input is invalid");
+            }
+        }
+        while(true){
+            System.out.print("Please input Booking Date Month: ");
+            try{
+                bookingmonth = Integer.parseInt(in.readLine());
+                if(bookingmonth == 0) {
+                    throw new RuntimeException("Booking date month cannot be left blank.");
+                }
+                if(bookingmonth < 0 || bookingmonth > 12) {
+                    hrow new RuntimeException("Please input valid month (1 - 12).");
+                }
+                break;
+            }catch(Exception e) {
+                System.out.println("Your input is invalid");
+            }
+        }
+        while(true){
+            System.out.print("Please input Booking Date Day: ");
+            try{
+                bookingday = Integer.parseInt(in.readLine());
+                if(bookingday == 0) {
+                    throw new RuntimeException("Booking date day cannot be left blank.");
+                }
+                if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
+                    if(bookingday < 0 || bookingday > 31) {
+                        throw new RuntimeException("Please input valid date.");
+                    }
+                }
+                if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
+                    if(bookingday < 0 || bookingday > 30) {
+                        throw new RuntimeException("Please input valid date.");
+                    }
+                }
+                if(bookingmonth == 2) {
+                    if(bookingday < 0 || bookingday > 28) {
+                        throw new RuntimeException("Please input valid date.");
+                    }
+                }
+                break;
+            }catch(Exception e) {
+                System.out.println("Your input is invalid");
+            }
+        }
+        Date temp = new Date(bookingyear, bookingmonth, bookingday);
+        bookingDate = temp;
+   		String query;
+   		while(true){
+   			try{
+   				query = ""
+   			}
+   		}
       // ...
       // ...
    }//end listHotelRoomBookingsForAWeek
