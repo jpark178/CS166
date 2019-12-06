@@ -429,7 +429,7 @@ public class DBProject {
     String query;
     try{
    		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + dob + "\',\'" + gender + "\');";
-   		esql.executeQuery(query);
+   		esql.executeUpdate(query);
     }catch(Exception e) {
     	System.err.println("Query failed: " + e.getMessage());
     }
@@ -481,7 +481,7 @@ public class DBProject {
     String query;
     try{
    		query = "INSERT INTO Room ( hotelID, roomNo, roomType) VALUES (" + hotelID + ", \'" + roomNo + "\', \'" + roomType + "\');";
-   		esql.executeQuery(query);
+   		esql.executeUpdate(query);
     }catch(Exception e) {
     	System.err.println("Query failed: " + e.getMessage());
     }
@@ -555,7 +555,7 @@ public class DBProject {
 		String query;
 		try{
 			query = "INSERT INTO MainetenanceCompany (cmpID, name, address, isCertified) VALUES (" + compID + ", \'" + compName + "\', \'" + compAddress + "\', \'" + isCertified + "\');";
-			esql.executeQuery(query);
+			esql.executeUpdate(query);
 		}catch(Exception e) {
 			System.err.println("Query failed: " + e.getMessage());
 		}
@@ -729,6 +729,7 @@ public class DBProject {
 		String query;
 		try {
 			query = "INSERT INTO Repair (rID, hotelID, roomNo, mCompany, repairDate, description, repairType) VALUES (" + repairID + ", \'" + hotelID + "\', \'" + roomNum + "\', \'" + maintCompany + "\', \'" + repairDate + "\', \'" + description + "\', \'" + repairType + "\');";
+			esql.executeUpdate(query);
 		} catch (Exception e) {
 			System.err.println("Query failed: " + e.getMessage());
 	    }
