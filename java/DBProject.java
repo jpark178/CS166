@@ -885,7 +885,7 @@ public class DBProject {
                   				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + bookingDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
                   				esql.executeUpdate(query);
                 			}catch(Exception e){
-                  				System.out.println("Query was not executed.");
+                  				System.out.println("Query failed: " + e.getMessage());
                 			}
             			} else if(input.equals("n") || input.equals("N")) {
                 			throw new RuntimeException("Your input is invalid!");
@@ -938,7 +938,7 @@ public class DBProject {
    				query = "count((SELECT R.roomNo\nFROM Room R\nWHERE R.hotelID = " + hotelID + ") as A1, (SELECT B.roomNo\nFROM Booking B\nWHERE B.hotelID = " + hotelID + ") as B1)";
    				esql.executeQuery(query);
    			}catch(Exception e) {
-   				System.out.println("Query was not executed.");
+   				System.out.println("Query failed: " + e.getMessage());
    			}
    		}
       // ...
@@ -967,7 +967,7 @@ public class DBProject {
    				esql.executeQuery(query);
    				break;
    			}catch(Exception e){
-   				System.out.println("Your input is invalid!");
+   				System.out.println("Query failed: " + e.getMessage());
    			}
    		}
       // ...
