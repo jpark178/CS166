@@ -21,8 +21,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 /**
  * This class defines a simple embedded SQL utility class that is designed to
  * work with PostgreSQL JDBC drivers.
@@ -413,7 +411,7 @@ public class DBProject {
    	//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	//Date finaldate = new Date(monthInput,dayInput,yearInput);
     String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-    System.out.println("Your inputted date is : ");
+    System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
     System.out.println(finaldate);
     //Date dob = new SimpleDateFormat.parse(finaldate);
    	//String dob = simpleDateFormat.format(finaldate);
@@ -705,11 +703,19 @@ public class DBProject {
 			  continue;
 		  }
 	  };
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
-    Date finaldate = new Date(monthInput,dayInput,yearInput);
-    String repairDate = simpleDateFormat.format(finaldate);
-    System.out.println("YOUR GIVEN DATE IS " + repairDate);
+    //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+    //Date finaldate = new Date(monthInput,dayInput,yearInput);
+    //String repairDate = simpleDateFormat.format(finaldate);
+    //System.out.println("YOUR GIVEN DATE IS " + repairDate);
   
+    String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
+    System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+    System.out.println(finaldate);
+    //Date dob = new SimpleDateFormat.parse(finaldate);
+    //String dob = simpleDateFormat.format(finaldate);
+    String repairDate = finaldate;
+
+
 		String description;
 		while(true) {
 			System.out.print("Input repair description: ");
@@ -870,10 +876,18 @@ public class DBProject {
                   			}
                   		}
 
-                      SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                      Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
-                      String bookingDate = simpleDateFormat.format(finaldate);
-                      System.out.println("YOUR GIVEN DATE IS " + bookingDate);
+                      //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+                      //Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
+                      //String bookingDate = simpleDateFormat.format(finaldate);
+                      //System.out.println("YOUR GIVEN DATE IS " + bookingDate);
+
+                      String finaldate = bookingmonth + "-" + bookingday + "-" + bookingyear;
+                      System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+                      System.out.println(finaldate);
+                      //Date dob = new SimpleDateFormat.parse(finaldate);
+                      //String dob = simpleDateFormat.format(finaldate);
+                      String bookingDate = finaldate;
+
 
                 			while(true){
                  				System.out.print("Please input the number of People for the Booking: ");
@@ -1119,11 +1133,19 @@ public class DBProject {
         continue;
       }
     };
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
-    Date finaldate = new Date(monthInput,dayInput,yearInput);
-    String requestDate = simpleDateFormat.format(finaldate);
-    System.out.println("YOUR GIVEN DATE IS " + requestDate);
+    //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+    //Date finaldate = new Date(monthInput,dayInput,yearInput);
+    //String requestDate = simpleDateFormat.format(finaldate);
+    //System.out.println("YOUR GIVEN DATE IS " + requestDate);
   
+
+    String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
+    System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+    System.out.println(finaldate);
+    //Date dob = new SimpleDateFormat.parse(finaldate);
+    //String dob = simpleDateFormat.format(finaldate);
+    String requestDate = finaldate;
+
 	  String query;
 	  while(true) {
 		  try {
@@ -1269,11 +1291,16 @@ public class DBProject {
                 System.out.println("Your input is invalid");
             }
         }
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
-        Date finaldate = new Date(checkmonth,checkday,checkyear);
-        String dob = simpleDateFormat.format(finaldate);
-        System.out.println("YOUR GIVEN DATE IS " + dob);
-
+        //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+        //Date finaldate = new Date(checkmonth,checkday,checkyear);
+        //String dob = simpleDateFormat.format(finaldate);
+        //System.out.println("YOUR GIVEN DATE IS " + dob);
+        String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
+        System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+        System.out.println(finaldate);
+        //Date dob = new SimpleDateFormat.parse(finaldate);
+        //String dob = simpleDateFormat.format(finaldate);
+        String bookingDate = finaldate;
 
    		String query;
    		//while(true){
