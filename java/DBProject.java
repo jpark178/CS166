@@ -1010,7 +1010,7 @@ public class DBProject {
                     throw new RuntimeException("Booking date month cannot be left blank.");
                 }
                 if(bookingmonth < 0 || bookingmonth > 12) {
-                    hrow new RuntimeException("Please input valid month (1 - 12).");
+                    throw new RuntimeException("Please input valid month (1 - 12).");
                 }
                 break;
             }catch(Exception e) {
@@ -1047,11 +1047,11 @@ public class DBProject {
         Date temp = new Date(bookingyear, bookingmonth, bookingday);
         bookingDate = temp;
    		String query;
-   		while(true){
-   			try{
-   				query = ""
-   			}
-   		}
+   		//while(true){
+   			//try{
+   				//query = " "
+   			//}
+   		//}
       // ...
       // ...
    }//end listHotelRoomBookingsForAWeek
