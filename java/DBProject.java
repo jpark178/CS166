@@ -1106,11 +1106,11 @@ public class DBProject {
         Date temp = new Date(checkyear, checkmonth, checkday);
         checkDate = temp;
    		String query;
-   		while(true){
-   			try{
-   				query = " "
-   			}
-   		}
+   		//while(true){
+   			//try{
+   			//	query = " "
+   			//}
+   		//}
       // ...
       // ...
    }//end listHotelRoomBookingsForAWeek
