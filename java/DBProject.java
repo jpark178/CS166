@@ -23,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.text.ParseException;
 /**
  * This class defines a simple embedded SQL utility class that is designed to
  * work with PostgreSQL JDBC drivers.
@@ -413,7 +414,7 @@ public class DBProject {
    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	//Date finaldate = new Date(monthInput,dayInput,yearInput);
     String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-    Date datefinal = formatter.parse(finaldate);
+    Date dob = formatter.parse(finaldate);
    	//String dob = simpleDateFormat.format(finaldate);
 	  System.out.println("YOUR GIVEN DATE IS " + dob);
 	
