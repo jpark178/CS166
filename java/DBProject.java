@@ -383,22 +383,22 @@ public class DBProject {
    		try {
    			dayInput = Integer.parseInt(in.readLine());
    			if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
-				if(dayInput < 0 || dayInput > 31) {
+				if(dayInput <= 0 || dayInput > 31) {
 					throw new RuntimeException("Please input valid date.");
 				}
 			}
 			if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
-				if(dayInput < 0 || dayInput > 30) {
+				if(dayInput <= 0 || dayInput > 30) {
 					throw new RuntimeException("Please input valid date.");
 				}
 			}
 			if(monthInput == 2) {
 				if(isLeap) {
-					if(dayInput < 0 || dayInput > 29) {
+					if(dayInput <= 0 || dayInput > 29) {
 						throw new RuntimeException("Please input valid date.");
 					}
 				} else {
-					if(dayInput < 0 || dayInput > 28) {
+					if(dayInput <= 0 || dayInput > 28) {
 						throw new RuntimeException("Please input valid date.");
 					}
 				}
@@ -676,17 +676,17 @@ public class DBProject {
 				  throw new RuntimeException("Repair date day cannot be left blank.");
 			  }
 			  if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
-				  if(dayInput < 0 || dayInput > 31) {
+				  if(dayInput <= 0 || dayInput > 31) {
 					  throw new RuntimeException("Please input valid date.");
 				  }
 			  }
 			  if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
-				  if(dayInput < 0 || dayInput > 30) {
+				  if(dayInput <= 0 || dayInput > 30) {
 					  throw new RuntimeException("Please input valid date.");
 				  }
 			  }
 			  if(monthInput == 2) {
-				  if(dayInput < 0 || dayInput > 28) {
+				  if(dayInput <= 0 || dayInput > 28) {
 					  throw new RuntimeException("Please input valid date.");
 				  }
 			  }
@@ -839,17 +839,17 @@ public class DBProject {
                       					throw new RuntimeException("Booking date day cannot be left blank.");
                     				}
                     				if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
-                      					if(bookingday < 0 || bookingday > 31) {
+                      					if(bookingday <= 0 || bookingday > 31) {
                         					throw new RuntimeException("Please input valid date.");
                       					}
                     				}
                     				if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
-                      					if(bookingday < 0 || bookingday > 30) {
+                      					if(bookingday <= 0 || bookingday > 30) {
                         					throw new RuntimeException("Please input valid date.");
                       					}
                     				}
                     				if(bookingmonth == 2) {
-                      					if(bookingday < 0 || bookingday > 28) {
+                      					if(bookingday <= 0 || bookingday > 28) {
                         					throw new RuntimeException("Please input valid date.");
                       					}
                     				}
@@ -1030,17 +1030,17 @@ public class DBProject {
                     throw new RuntimeException("Booking date day cannot be left blank.");
                 }
                 if(checkmonth == 1 || checkmonth == 3 || checkmonth == 5 || checkmonth == 7 || checkmonth == 8 || checkmonth == 10 || checkmonth == 12) {
-                    if(checkday < 0 || checkday > 31) {
+                    if(checkday <= 0 || checkday > 31) {
                         throw new RuntimeException("Please input valid date.");
                     }
                 }
                 if(checkmonth == 4 || checkmonth == 6 || checkmonth == 9 || checkmonth == 11) {
-                    if(checkday < 0 || checkday > 30) {
+                    if(checkday <= 0 || checkday > 30) {
                         throw new RuntimeException("Please input valid date.");
                     }
                 }
                 if(checkmonth == 2) {
-                    if(checkday < 0 || checkday > 28) {
+                    if(checkday <= 0 || checkday > 28) {
                         throw new RuntimeException("Please input valid date.");
                     }
                 }
