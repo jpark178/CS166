@@ -1448,7 +1448,7 @@ public class DBProject {
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
       // Your code goes here.
-	String 
+	String query;
       // ...
       // ...
    }//end listRepairsMade
