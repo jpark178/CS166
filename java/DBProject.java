@@ -975,15 +975,13 @@ public class DBProject {
 	}
 
 	String query;
-	while(true) {
 		try {
-			query = "INSERT INTO Assigned (asgID, staffID, hotelID, roomNo) VALUES (" + assignedID + ", \'" + staffSSN + ", \'" + hotelID + ", \'" + roomNum + "\');";
+			query = "INSERT INTO Assigned (asgID, staffID, hotelID, roomNo) VALUES (" + assignedID + ", " + staffSSN + ", " + hotelID + ", " + roomNum + ");";
 			esql.executeUpdate(query);
 			assignedID = assignedID + 1;
 		} catch (Exception e) {
 			System.out.println("Query failed: " + e.getMessage());
-		}
-	}		
+		}		
       // ...
       // ...
    }//end assignHouseCleaningToRoom
