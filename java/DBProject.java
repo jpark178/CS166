@@ -1441,7 +1441,6 @@ public class DBProject {
 	  } catch (Exception e) {
 		  System.err.println(e.getMessage());
 	  }
-      
       // ...
       // ...
    }//end topKMaintenanceCompany
