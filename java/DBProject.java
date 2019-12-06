@@ -413,7 +413,7 @@ public class DBProject {
    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
    	Date finaldate = new Date(monthInput,dayInput,yearInput);
    	String dob = simpleDateFormat.format(finaldate);
-	  System.out.println("YOUR GIVEN DATE IS" + dob);
+	  System.out.println("YOUR GIVEN DATE IS " + dob);
 	
    	String gender;
    	while(true){
@@ -704,7 +704,7 @@ public class DBProject {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
     Date finaldate = new Date(monthInput,dayInput,yearInput);
     String repairDate = simpleDateFormat.format(finaldate);
-    System.out.println("YOUR GIVEN DATE IS" + repairDate);
+    System.out.println("YOUR GIVEN DATE IS " + repairDate);
   
 		String description;
 		while(true) {
@@ -869,7 +869,7 @@ public class DBProject {
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
                         Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
                         String bookingDate = simpleDateFormat.format(finaldate);
-                        System.out.println("YOUR GIVEN DATE IS" + bookingDate);
+                        System.out.println("YOUR GIVEN DATE IS " + bookingDate);
 
                 			while(true){
                  				System.out.print("Please input the number of People for the Booking: ");
@@ -1117,7 +1117,7 @@ public class DBProject {
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
     Date finaldate = new Date(monthInput,dayInput,yearInput);
     String requestDate = simpleDateFormat.format(finaldate);
-    System.out.println("YOUR GIVEN DATE IS" + requestDate);
+    System.out.println("YOUR GIVEN DATE IS " + requestDate);
   
 	  String query;
 	  while(true) {
@@ -1267,7 +1267,7 @@ public class DBProject {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
         Date finaldate = new Date(checkmonth,checkday,checkyear);
         String dob = simpleDateFormat.format(finaldate);
-        System.out.println("YOUR GIVEN DATE IS" + dob);
+        System.out.println("YOUR GIVEN DATE IS " + dob);
 
 
    		String query;
