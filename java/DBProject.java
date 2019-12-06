@@ -842,7 +842,7 @@ public class DBProject {
                	   			System.out.print("Please input Booking Date Day: ");
                   			try{
                     			bookingday = Integer.parseInt(in.readLine());
-                    				f(bookingday == 0) {
+                    			if(bookingday == 0) {
                       				throw new RuntimeException("Booking date day cannot be left blank.");
                     				
                     			if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
