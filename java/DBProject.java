@@ -428,7 +428,8 @@ public class DBProject {
 
     String query;
     try{
-   		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + dob + "\',\'" + gender + "\');";
+   		//query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + dob + "\',\'" + gender + "\');";
+   		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", " + fName + ", " + lName + ", " + address + ", " + phNo + ", " + dob + ", " + gender + ");";
    		esql.executeUpdate(query);
     }catch(Exception e) {
     	System.err.println("Query failed: " + e.getMessage());
