@@ -908,6 +908,54 @@ public class DBProject {
    public static void assignHouseCleaningToRoom(DBProject esql){
 	  // Given Staff SSN, HotelID, roomNo Assign the staff to the room 
       // Your code goes here.
+
+	int assignedID = 2000;
+
+	int staffSSN;
+	while(true) {
+		System.out.println("Please input Staff SSN: ");
+		try {
+			staffSSN = Integer.parseInt(in.readLine());
+			break;
+		} catch (Exception e) {
+			System.out.println("Your input is invalid!");
+			continue;
+		}
+	}
+
+	int hotelID;
+	while(true) {
+		System.out.println("Please input Hotel ID: ");
+		try {
+			hotelID = Integer.parseInt(in.readLine());
+			break;
+		} catch (Exception e) {
+			System.out.println("Your input is invalid!");
+			continue;
+		}
+	}
+
+	int roomNum;
+	while(true) {
+		System.out.println("Please input Room number: ");
+		try {
+			roomNum = Integer.parseInt(in.readLine());
+			break;
+		} catch (Exception e) {
+			System.out.println("Your input is invalid!");
+			continue;
+		}
+	}
+
+	String query;
+	while(true) {
+		try {
+			query = "INSERT INTO Assigned (asgID, staffID, hotelID, roomNo) VALUES (" + assignedID + ", \'" + staffSSN + ", \'" + hotelID + ", \'" + roomNum + "\');";
+			esql.executeUpdate(query);
+		} catch (Exception e) {
+			System.out.println("Query failed: " + e.getMessage());
+		}
+	}		
       // ...
       // ...
    }//end assignHouseCleaningToRoom
