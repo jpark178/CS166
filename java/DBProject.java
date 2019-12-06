@@ -252,7 +252,7 @@ public class DBProject {
    }//end readChoice
 
    
-   public static void addCustomer(DBProject esql){
+   public static void addCustomer(DBProject esql){//DONE
 	  // Given customer details add the customer in the DB 
       // Your code goes here.
    	int customerID;
@@ -318,7 +318,7 @@ public class DBProject {
    		System.out.print("Input Customer phone number: ");
    		try {
    			phNo = Integer.parseInt(in.readLine());
-   			if(phNo == 0) {
+   			if(phNo <= 0) {
    				throw new RuntimeException("Customer phone number cannot be left blank");
    			}
    			break;
@@ -444,7 +444,7 @@ public class DBProject {
  	// ...
    }//end addCustomer
 
-   public static void addRoom(DBProject esql){
+   public static void addRoom(DBProject esql){//DONE
 	  // Given room details add the room in the DB
    	int hotelID;
    	while(true){
@@ -497,7 +497,7 @@ public class DBProject {
       // ...
    }//end addRoom
 
-	public static void addMaintenanceCompany(DBProject esql){
+	public static void addMaintenanceCompany(DBProject esql){//DONE
 		// Given maintenance Company details add the maintenance company in the DB
 		
 		int compID;
@@ -570,7 +570,7 @@ public class DBProject {
       // ...
    }//end addMaintenanceCompany
 
-   public static void addRepair(DBProject esql){
+   public static void addRepair(DBProject esql){//DONE
 	  // Given repair details add repair in the DB
       // Your code goes here.
       
@@ -754,7 +754,7 @@ public class DBProject {
       // ...
    }//end addRepair
 
-   public static void bookRoom(DBProject esql){
+   public static void bookRoom(DBProject esql){//DONE
 	  // Given hotelID, roomNo and customer Name create a booking in the DB 
       // Your code goes here.
       int hotelID;
@@ -932,7 +932,7 @@ public class DBProject {
       // ...
    }//end bookRoom
 
-   public static void assignHouseCleaningToRoom(DBProject esql){
+   public static void assignHouseCleaningToRoom(DBProject esql){//DONE
 	  // Given Staff SSN, HotelID, roomNo Assign the staff to the room 
       // Your code goes here.
 
@@ -986,7 +986,7 @@ public class DBProject {
       // ...
    }//end assignHouseCleaningToRoom
    
-   public static void repairRequest(DBProject esql){
+   public static void repairRequest(DBProject esql){//DONE
 	  // Given a hotelID, Staff SSN, roomNo, repairID , date create a repair request in the DB
       // Your code goes here.
       int request = 2000;
@@ -1158,7 +1158,7 @@ public class DBProject {
       // ...
    }//end repairRequest
    
-   public static void numberOfAvailableRooms(DBProject esql){
+   public static void numberOfAvailableRooms(DBProject esql){//DONE
 	  // Given a hotelID, get the count of rooms available  (NUM OF TOTAL ROOMS OF THE HOTEL - THE NUMBER ROOMS BOOKED)
       // Your code goes here.
    		int hotelID;
@@ -1174,19 +1174,18 @@ public class DBProject {
    		}
 ;
    		String query;
-   		while(true){
    			try{
-   				query = "SELECT A1, B1 FROM (SELECT R.roomNo\nFROM Room R\nWHERE R.hotelID = " + hotelID + ") as A1, (SELECT B.roomNo\nFROM Booking B\nWHERE B.hotelID = " + hotelID + ") as B1)";
+   				//query = "SELECT R.hotelID, A1-B1 FROM (SELECT R.roomNo\nFROM Room R\nWHERE R.hotelID = " + hotelID + ") as A1, (SELECT B.roomNo\nFROM Booking B\nWHERE B.hotelID = " + hotelID + ") as B1)";
+				query = "SELECT COUNT(R.roomNo) FROM Room R WHERE R.hotelID = " + hotelID + "\nEXCEPT\nSELECT COUNT(B.roomNo) FROM Booking B WHERE B.hotelID = " + hotelID + ";";
    				esql.executeQuery(query);
    			}catch(Exception e) {
    				System.out.println("Query failed: " + e.getMessage());
    			}
-   		}
       // ...
       // ...
    }//end numberOfAvailableRooms
    
-   public static void numberOfBookedRooms(DBProject esql){
+   public static void numberOfBookedRooms(DBProject esql){//DONE
 	  // Given a hotelID, get the count of rooms booked
       // Your code goes here.
    		int hotelID;
@@ -1204,7 +1203,7 @@ public class DBProject {
    		String query;
    		while(true){
    			try{
-   				query = "SELECT count(B.roomNo)\nFROM Booking B WHERE hotelID = " + hotelID + "\';";
+   				query = "SELECT count(B.roomNo)\nFROM Booking B WHERE hotelID = " + hotelID + ";";
    				esql.executeQuery(query);
    				break;
    			}catch(Exception e){
@@ -1301,11 +1300,11 @@ public class DBProject {
         String bookingDate = finaldate;
 
    		String query;
-   		//while(true){
-   			//try{
-   			//	query = " "
-   			//}
-   		//}
+   			try{
+   				query = "SELECT B.bID FROM Booking B WHERE B.bookingDate = " + bookingDate + " + interval '1 day';";
+   			}catch(Exception e){
+				System.out.println("Query failed. " + e.getMessage());
+   			}
       // ...
       // ...
    }//end listHotelRoomBookingsForAWeek
