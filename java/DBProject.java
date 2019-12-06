@@ -1396,7 +1396,11 @@ public class DBProject {
 	  
 	  String query;
 	  try{
-		  query = 
+		  query = "SELECT R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, MaintenanceCompany M, WHERE M.name = " + maintName + " AND M.cmpID = R.mCompany;";
+		  esql.executeQuery(query);
+	  } catch (Exception e) {
+		  System.err.println(e.getMessage());
+	  }
       
       // ...
       // ...
@@ -1405,6 +1409,8 @@ public class DBProject {
    public static void topKMaintenanceCompany(DBProject esql){
 	  // List Top K Maintenance Company Names based on total repair count (descending order)
       // Your code goes here.
+      
+      
       // ...
       // ...
    }//end topKMaintenanceCompany
