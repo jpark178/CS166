@@ -822,54 +822,54 @@ public class DBProject {
                   				}catch(Exception e) {
                     				System.out.println("Your input is invalid");
                   				}
-                  			}
-                  			while(true){
-                  				System.out.print("Please input Booking Date Month: ");
-                  				try{
-                    				bookingmonth = Integer.parseInt(in.readLine());
-                    				if(bookingmonth == 0) {
-                      					throw new RuntimeException("Booking date month cannot be left blank.");
-                    				}
-                    				if(bookingmonth < 0 || bookingmonth > 12) {
-                      					throw new RuntimeException("Please input valid month (1 - 12).");
-                    				}
-                    				break;
-                  				}catch(Exception e) {
-                    				System.out.println("Your input is invalid");
-               	   				}
+                  		}
+                  		while(true){
+                  			System.out.print("Please input Booking Date Month: ");
+                  			try{
+                    			bookingmonth = Integer.parseInt(in.readLine());
+                    			if(bookingmonth == 0) {
+                      				throw new RuntimeException("Booking date month cannot be left blank.");
+                    			}
+                    			if(bookingmonth < 0 || bookingmonth > 12) {
+                      				throw new RuntimeException("Please input valid month (1 - 12).");
+                    			}
+                    			break;
+                  			}catch(Exception e) {
+                    			System.out.println("Your input is invalid");
                	   			}
-               	   			while(true){
-               	   				System.out.print("Please input Booking Date Day: ");
-                  				try{
-                    				bookingday = Integer.parseInt(in.readLine());
-                    				if(bookingday == 0) {
-                      					throw new RuntimeException("Booking date day cannot be left blank.");
-                    				}
-                    				if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
-                      					if(bookingday <= 0 || bookingday > 31) {
-                        					throw new RuntimeException("Please input valid date.");
-                      					}
-                    				}
-                    				if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
-                      					if(bookingday <= 0 || bookingday > 30) {
-                        					throw new RuntimeException("Please input valid date.");
-                      					}
-                    				}
-                    				if(bookingmonth == 2) {
-                      					if(bookingday <= 0 || bookingday > 28) {
-                        					throw new RuntimeException("Please input valid date.");
-                      					}
-                    				}
-                    				break;
-                  				}catch(Exception e) {
-                    				System.out.println("Your input is invalid");
-                  				}
+               	   		}
+               	   		while(true){
+               	   			System.out.print("Please input Booking Date Day: ");
+                  			try{
+                    			bookingday = Integer.parseInt(in.readLine());
+                    				f(bookingday == 0) {
+                      				throw new RuntimeException("Booking date day cannot be left blank.");
+                    				
+                    			if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
+                      				if(bookingday <= 0 || bookingday > 31) {
+                        				throw new RuntimeException("Please input valid date.");
+                      				}
+                    			}
+                    			if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
+                      				if(bookingday <= 0 || bookingday > 30) {
+                        				throw new RuntimeException("Please input valid date.");
+                      				}
+                    			}
+                    			if(bookingmonth == 2) {
+                      				if(bookingday <= 0 || bookingday > 28) {
+                        				throw new RuntimeException("Please input valid date.");
+                      				}
+                    			}
+                    			break;
+                  			}catch(Exception e) {
+                    			System.out.println("Your input is invalid");
                   			}
+                  		}
 
-                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                        Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
-                        String bookingDate = simpleDateFormat.format(finaldate);
-                        System.out.println("YOUR GIVEN DATE IS " + bookingDate);
+                      SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+                      Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
+                      String bookingDate = simpleDateFormat.format(finaldate);
+                      System.out.println("YOUR GIVEN DATE IS " + bookingDate);
 
                 			while(true){
                  				System.out.print("Please input the number of People for the Booking: ");
@@ -897,13 +897,13 @@ public class DBProject {
                 			}catch(Exception e){
                   				System.out.println("Query failed: " + e.getMessage());
                 			}
-            			} else if(input.equals("n") || input.equals("N")) {
-                			throw new RuntimeException("Your input is invalid!");
-              			}
+            			}else if(input.equals("n") || input.equals("N")) {
+                			System.out.println("Goodbye!");
+              		}
       				}catch(Exception e){
-            			System.out.println("Your input is invalid!");
-              			continue;
-            		}
+            		System.out.println("Your input is invalid!");
+              	continue;
+            	}
         		}
       		}
     	}catch(Exception e){
