@@ -417,10 +417,13 @@ public class DBProject {
    		try{
    			gender = in.readLine();
    			if(!gender.equals("Male") || !gender.equals("Female") || !gender.equals("Other")) {
+   				System.out.println(gender);
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
+
    			}
    			break;
    		}catch (Exception e) {
+
    			System.out.println("Your Input is invalid!");
    			continue;
    		}
