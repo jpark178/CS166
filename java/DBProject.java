@@ -1436,7 +1436,7 @@ public class DBProject {
 	  
 	  String query;
 	  try {
-		  query = "SELECT M.name, COUNT(*) R.rID\nFROM MaintenanceCompany M, Repair R WHERE M.cmpID = R.mCompany GROUP BY M.name, HAVING COUNT(*) <= " + repairCount + " ORDER BY R.rID DESC LIMIT " + k + ";";
+		  query = "SELECT M.name, COUNT(R.rID)\nFROM MaintenanceCompany M, Repair R WHERE M.cmpID = R.mCompany GROUP BY M.name HAVING COUNT(*) <= " + repairCount + " ORDER BY R.rID DESC LIMIT " + k + ";";
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.err.println(e.getMessage());
