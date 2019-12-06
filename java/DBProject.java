@@ -1410,6 +1410,37 @@ public class DBProject {
 	  // List Top K Maintenance Company Names based on total repair count (descending order)
       // Your code goes here.
       
+      String repairCount;
+      while(true) {
+		  System.out.println("Please enter a repair count: ");
+		  try {
+			  repairCount = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String k;
+	  while(true) {
+		  System.out.println("Please enter a range: ");
+		  try {
+			  k = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String query;
+	  try {
+		  query = "SELECT M.name, COUNT(*) R.rID FROM MaintenanceCompany M, Repair R GROUP BY M.name, HAVING COUNT(*) <= " + k + " ORDER BY R.id DESC;";
+		  esql.executeQuery(query);
+	  } catch (Exception e) {
+		  System.err.println(e.getMessage());
+	  }
       
       // ...
       // ...
