@@ -410,7 +410,7 @@ public class DBProject {
    			continue;
    		}
    	};
-   	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
+   	//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	//Date finaldate = new Date(monthInput,dayInput,yearInput);
     String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
     System.out.println("Your inputted date is : ");
