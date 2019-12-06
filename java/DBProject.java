@@ -416,6 +416,9 @@ public class DBProject {
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
    			genderS = in.readLine();
+   			if(genderS == '0'){
+   				continue;
+   			}
    			if(genderS != "Male" || genderS != "Female" || genderS != "Other") {
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
    			}
@@ -424,7 +427,6 @@ public class DBProject {
    			System.out.println("Your Input is invalid!");
    			continue;
    		}
-   		GenderType gender = new GenderType(genderS);
    	}
 
     String query;
