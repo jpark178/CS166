@@ -411,13 +411,10 @@ public class DBProject {
    			continue;
    		}
    	};
-   	String month = Integer.toString(monthInput);
-   	String day = Integer.toString(dayInput);
-   	String year = Integer.toString(yearInput);
    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-   	Date dob = new Date(yearInput,monthInput,dayInput);
-   	String finaldate = simpleDateFormat.format(dob);
-	  System.out.println("YOUR GIVEN DATE IS" + finaldate);
+   	Date finaldate = new Date(yearInput,monthInput,dayInput);
+   	String dob = simpleDateFormat.format(finaldate);
+	  System.out.println("YOUR GIVEN DATE IS" + dob);
 	
    	String gender;
    	while(true){
@@ -705,9 +702,11 @@ public class DBProject {
 			  continue;
 		  }
 	  };
-	  
-	  Date repairDate = new Date(yearInput, monthInput, dayInput);
-		
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    Date finaldate = new Date(yearInput,monthInput,dayInput);
+    String dob = simpleDateFormat.format(finaldate);
+    System.out.println("YOUR GIVEN DATE IS" + dob);
+  
 		String description;
 		while(true) {
 			System.out.print("Input repair description: ");
@@ -760,7 +759,6 @@ public class DBProject {
     	int bookingday;
     	int noOfPeople;
     	int price;
-    	Date bookingDate;
     	while(true){
         	System.out.print("Please input Customer ID: ");
         	try{
@@ -868,8 +866,11 @@ public class DBProject {
                     				System.out.println("Your input is invalid");
                   				}
                   			}
-                  			Date temp = new Date(bookingyear, bookingmonth, bookingday);
-                  			bookingDate = temp;
+
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+                        Date finaldate = new Date(bookingyear,bookingmonth,bookingday);
+                        String dob = simpleDateFormat.format(finaldate);
+                        System.out.println("YOUR GIVEN DATE IS" + dob);
 
                 			while(true){
                  				System.out.print("Please input the number of People for the Booking: ");
@@ -1033,7 +1034,92 @@ public class DBProject {
 			  continue;
 		  }
 	  }
-	  
+    int yearInput;
+    int monthInput;
+    int dayInput;
+    boolean isLeap;
+    
+    while(true) {
+      System.out.print("Input Repair date year: ");
+      try{
+        yearInput = Integer.parseInt(in.readLine());
+        if(yearInput == 0) {
+          throw new RuntimeException("Repair date year cannot be left blank.");
+        }
+        if(yearInput <= 0 || yearInput > 9999) {
+          throw new RuntimeException("Please input valid year (1 - 9999).");
+        }
+        break;
+      } catch (Exception e) {
+        System.out.println("Your input is invalid!");
+        continue;
+      }
+    };
+    
+    // Checking for leap year.
+    if(yearInput % 4 == 0) {
+      if(yearInput % 100 == 0) {
+        if(yearInput % 400 == 0) {
+          isLeap = true;
+        } else {
+          isLeap = false;
+        }
+      } else {
+        isLeap = true;
+      }
+    } else {
+      isLeap = false;
+    }
+
+    while(true) {
+      System.out.print("Input Repair date month: ");
+      try {
+        monthInput = Integer.parseInt(in.readLine());
+        if(monthInput == 0) {
+          throw new RuntimeException("Repair date month cannot be left blank.");
+        }
+        if(monthInput < 0 || monthInput > 12) {
+          throw new RuntimeException("Please input valid month (1 - 12).");
+        }
+        break;
+      } catch (Exception e) {
+        System.out.println("Your input is invalid!");
+        continue;
+      }
+    };
+    while(true) {
+      System.out.print("Input Repair date day: ");
+      try {
+        dayInput = Integer.parseInt(in.readLine());
+        if(dayInput == 0) {
+          throw new RuntimeException("Repair date day cannot be left blank.");
+        }
+        if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
+          if(dayInput <= 0 || dayInput > 31) {
+            throw new RuntimeException("Please input valid date.");
+          }
+        }
+        if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
+          if(dayInput <= 0 || dayInput > 30) {
+            throw new RuntimeException("Please input valid date.");
+          }
+        }
+        if(monthInput == 2) {
+          if(dayInput <= 0 || dayInput > 28) {
+            throw new RuntimeException("Please input valid date.");
+          }
+        }
+        break;
+      } catch (Exception e) {
+        System.out.println("Your input is invalid!");
+        continue;
+      }
+    };
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    Date finaldate = new Date(yearInput,monthInput,dayInput);
+    String dob = simpleDateFormat.format(finaldate);
+    System.out.println("YOUR GIVEN DATE IS" + dob);
+  
 	  String query;
 	  while(true) {
 		  try {
@@ -1112,7 +1198,6 @@ public class DBProject {
    		int checkyear;
    		int checkmonth;
    		int checkday;
-   		Date checkDate;
    		while(true){
    			System.out.println("Please input hotel ID: ");
    			try{
@@ -1180,8 +1265,12 @@ public class DBProject {
                 System.out.println("Your input is invalid");
             }
         }
-        Date temp = new Date(checkyear, checkmonth, checkday);
-        checkDate = temp;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Date finaldate = new Date(yearInput,monthInput,dayInput);
+        String dob = simpleDateFormat.format(finaldate);
+        System.out.println("YOUR GIVEN DATE IS" + dob);
+
+
    		String query;
    		//while(true){
    			//try{
