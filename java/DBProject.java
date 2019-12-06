@@ -23,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 /**
  * This class defines a simple embedded SQL utility class that is designed to
  * work with PostgreSQL JDBC drivers.
@@ -413,8 +414,11 @@ public class DBProject {
    	String month = Integer.toString(monthInput);
    	String day = Integer.toString(dayInput);
    	String year = Integer.toString(yearInput);
+   	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
    	Date dob = new Date(yearInput,monthInput,dayInput);
-
+   	String finaldate = simpleDateFormat.format(dob));
+	System.out.println("YOUR GIVEN DATE IS" + finaldate);
+	
    	String gender;
    	while(true){
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
@@ -1154,13 +1158,6 @@ public class DBProject {
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
       // Your code goes here.
-   	String query;
-   	try{
-   		query = "SELECT C.customerID FROM Customer;";
-   		esql.executeQuery(query);
-   	}catch(Exception e){
-   		System.out.print("Query failed." + e.getMessage());
-   	}
       // ...
       // ...
    }//end listRepairsMade
