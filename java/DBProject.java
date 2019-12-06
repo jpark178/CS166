@@ -704,8 +704,8 @@ public class DBProject {
 	  };
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
     Date finaldate = new Date(yearInput,monthInput,dayInput);
-    String repairdate = simpleDateFormat.format(finaldate);
-    System.out.println("YOUR GIVEN DATE IS" + repairdate);
+    String repairDate = simpleDateFormat.format(finaldate);
+    System.out.println("YOUR GIVEN DATE IS" + repairDate);
   
 		String description;
 		while(true) {
@@ -736,7 +736,7 @@ public class DBProject {
 	  
 		String query;
 		try {
-			query = "INSERT INTO Repair (rID, hotelID, roomNo, mCompany, repairDate, description, repairType) VALUES (" + repairID + ", \'" + hotelID + "\', \'" + roomNum + "\', \'" + maintCompany + "\', \'" + repairdate + "\', \'" + description + "\', \'" + repairType + "\');";
+			query = "INSERT INTO Repair (rID, hotelID, roomNo, mCompany, repairDate, description, repairType) VALUES (" + repairID + ", \'" + hotelID + "\', \'" + roomNum + "\', \'" + maintCompany + "\', \'" + repairDate + "\', \'" + description + "\', \'" + repairType + "\');";
 			esql.executeUpdate(query);
 		} catch (Exception e) {
 			System.err.println("Query failed: " + e.getMessage());
