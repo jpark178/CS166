@@ -981,6 +981,7 @@ public class DBProject {
    		int checkyear;
    		int checkmonth;
    		int checkday;
+   		Date checkDate;
    		while(true){
    			System.out.println("Please input hotel ID: ");
    			try{
@@ -1049,7 +1050,7 @@ public class DBProject {
             }
         }
         Date temp = new Date(checkyear, checkmonth, checkday);
-        bookingDate = temp;
+        checkDate = temp;
    		String query;
    		//while(true){
    			//try{
