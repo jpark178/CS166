@@ -1266,7 +1266,7 @@ public class DBProject {
             }
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
-        Date finaldate = new Date(checkmonth,checkday,checkyear);
+        Date finaldate = Date(checkmonth,checkday,checkyear);
         String dob = simpleDateFormat.format(finaldate);
         System.out.println("YOUR GIVEN DATE IS " + dob);
 
