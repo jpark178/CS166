@@ -313,7 +313,7 @@ public class DBProject {
    		}
    	};
 
-   	int phNo;
+   	double phNo;
    	while(true){
    		System.out.print("Input Customer phone number: ");
    		try {
@@ -333,6 +333,7 @@ public class DBProject {
    	int dayInput;
    	boolean isLeap;
    	while(true){
+		System.out.println("Date is in format MM/dd/yyyy.");
    		System.out.print("Input Customer birth year: ");
    		try {
    			yearInput = Integer.parseInt(in.readLine());
@@ -410,8 +411,8 @@ public class DBProject {
    	};
    	//SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	//Date finaldate = new Date(monthInput,dayInput,yearInput);
-    String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-    System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+    String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
+    System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
     System.out.println(finaldate);
     //Date dob = new SimpleDateFormat.parse(finaldate);
    	//String dob = simpleDateFormat.format(finaldate);
@@ -708,8 +709,8 @@ public class DBProject {
     //String repairDate = simpleDateFormat.format(finaldate);
     //System.out.println("YOUR GIVEN DATE IS " + repairDate);
   
-    String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-    System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+    String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
+    System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
     System.out.println(finaldate);
     //Date dob = new SimpleDateFormat.parse(finaldate);
     //String dob = simpleDateFormat.format(finaldate);
@@ -881,8 +882,8 @@ public class DBProject {
                       //String bookingDate = simpleDateFormat.format(finaldate);
                       //System.out.println("YOUR GIVEN DATE IS " + bookingDate);
 
-                      String finaldate = bookingmonth + "-" + bookingday + "-" + bookingyear;
-                      System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+                      String finaldate = bookingmonth + "/" + bookingday + "/" + bookingyear;
+                      System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
                       System.out.println(finaldate);
                       //Date dob = new SimpleDateFormat.parse(finaldate);
                       //String dob = simpleDateFormat.format(finaldate);
@@ -1137,8 +1138,8 @@ public class DBProject {
     //System.out.println("YOUR GIVEN DATE IS " + requestDate);
   
 
-    String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-    System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+    String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
+    System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
     System.out.println(finaldate);
     //Date dob = new SimpleDateFormat.parse(finaldate);
     //String dob = simpleDateFormat.format(finaldate);
@@ -1292,8 +1293,8 @@ public class DBProject {
         //Date finaldate = new Date(checkmonth,checkday,checkyear);
         //String dob = simpleDateFormat.format(finaldate);
         //System.out.println("YOUR GIVEN DATE IS " + dob);
-        String finaldate = checkmonth + "-" + checkday + "-" + checkyear;
-        System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+        String finaldate = checkmonth + "/" + checkday + "/" + checkyear;
+        System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
         System.out.println(finaldate);
         //Date dob = new SimpleDateFormat.parse(finaldate);
         //String dob = simpleDateFormat.format(finaldate);
@@ -1457,8 +1458,8 @@ public class DBProject {
             }
         }
 
-        String finaldate = checkmonth + "-" + checkday + "-" + checkyear;
-        System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+        String finaldate = checkmonth + "/" + checkday + "/" + checkyear;
+        System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
         System.out.println(finaldate);
         String startDate = finaldate;
 
@@ -1521,8 +1522,8 @@ public class DBProject {
             }
         }
 
-        String finishdate = checkmonth + "-" + checkday + "-" + checkyear;
-        System.out.println("Your inputted date is (In the format of MM-dd-yyyy ) : ");
+        String finishdate = checkmonth + "/" + checkday + "/" + checkyear;
+        System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
         System.out.println(finishdate);
         String endDate = finishdate;
 
