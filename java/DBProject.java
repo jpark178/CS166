@@ -23,6 +23,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.
 /**
  * This class defines a simple embedded SQL utility class that is designed to
  * work with PostgreSQL JDBC drivers.
@@ -1156,7 +1157,7 @@ public class DBProject {
    		String query;
    		while(true){
    			try{
-   				query = "count((SELECT R.roomNo\nFROM Room R\nWHERE R.hotelID = " + hotelID + ") as A1, (SELECT B.roomNo\nFROM Booking B\nWHERE B.hotelID = " + hotelID + ") as B1)";
+   				query = "SELECT A1, B1 FROM (SELECT R.roomNo\nFROM Room R\nWHERE R.hotelID = " + hotelID + ") as A1, (SELECT B.roomNo\nFROM Booking B\nWHERE B.hotelID = " + hotelID + ") as B1)";
    				esql.executeQuery(query);
    			}catch(Exception e) {
    				System.out.println("Query failed: " + e.getMessage());
