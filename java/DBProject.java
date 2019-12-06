@@ -931,7 +931,7 @@ public class DBProject {
    				continue;
    			}
    		}
-
+;
    		String query;
    		while(true){
    			try{
@@ -949,6 +949,7 @@ public class DBProject {
 	  // Given a hotelID, get the count of rooms booked
       // Your code goes here.
    		int hotelID;
+
    		while(true){
    			System.out.println("Please input hotel ID: ");
    			try{
@@ -977,6 +978,9 @@ public class DBProject {
 	  // Given a hotelID, date - list all the rooms available for a week(including the input date) 
       // Your code goes here.
    		int hotelID;
+   		int checkyear;
+   		int checkmonth;
+   		int checkday;
    		while(true){
    			System.out.println("Please input hotel ID: ");
    			try{
@@ -990,11 +994,11 @@ public class DBProject {
    		while(true){
             System.out.print("Please input Booking Date Year: ");
             try{
-                bookingyear = Integer.parseInt(in.readLine());
-                if(bookingyear == 0) {
+                checkyear = Integer.parseInt(in.readLine());
+                if(checkyear == 0) {
                     throw new RuntimeException("Booking date year cannot be left blank.");
                 }
-                if(bookingyear < 0 || bookingyear > 9999) {
+                if(checkyear < 0 || checkyear > 9999) {
                     throw new RuntimeException("Please input valid year (1 - 9999).");
                 }
                 break;
@@ -1005,11 +1009,11 @@ public class DBProject {
         while(true){
             System.out.print("Please input Booking Date Month: ");
             try{
-                bookingmonth = Integer.parseInt(in.readLine());
-                if(bookingmonth == 0) {
+                checkmonth = Integer.parseInt(in.readLine());
+                if(checkmonth == 0) {
                     throw new RuntimeException("Booking date month cannot be left blank.");
                 }
-                if(bookingmonth < 0 || bookingmonth > 12) {
+                if(checkmonth < 0 || checkmonth > 12) {
                     throw new RuntimeException("Please input valid month (1 - 12).");
                 }
                 break;
@@ -1020,22 +1024,22 @@ public class DBProject {
         while(true){
             System.out.print("Please input Booking Date Day: ");
             try{
-                bookingday = Integer.parseInt(in.readLine());
-                if(bookingday == 0) {
+                checkday = Integer.parseInt(in.readLine());
+                if(checkday == 0) {
                     throw new RuntimeException("Booking date day cannot be left blank.");
                 }
-                if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
-                    if(bookingday < 0 || bookingday > 31) {
+                if(checkmonth == 1 || checkmonth == 3 || checkmonth == 5 || checkmonth == 7 || checkmonth == 8 || checkmonth == 10 || checkmonth == 12) {
+                    if(checkday < 0 || checkday > 31) {
                         throw new RuntimeException("Please input valid date.");
                     }
                 }
-                if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
-                    if(bookingday < 0 || bookingday > 30) {
+                if(checkmonth == 4 || checkmonth == 6 || checkmonth == 9 || checkmonth == 11) {
+                    if(checkday < 0 || checkday > 30) {
                         throw new RuntimeException("Please input valid date.");
                     }
                 }
-                if(bookingmonth == 2) {
-                    if(bookingday < 0 || bookingday > 28) {
+                if(checkmonth == 2) {
+                    if(checkday < 0 || checkday > 28) {
                         throw new RuntimeException("Please input valid date.");
                     }
                 }
@@ -1044,7 +1048,7 @@ public class DBProject {
                 System.out.println("Your input is invalid");
             }
         }
-        Date temp = new Date(bookingyear, bookingmonth, bookingday);
+        Date temp = new Date(checkyear, checkmonth, checkday);
         bookingDate = temp;
    		String query;
    		//while(true){
