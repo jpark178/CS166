@@ -22,6 +22,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 /**
  * This class defines a simple embedded SQL utility class that is designed to
  * work with PostgreSQL JDBC drivers.
@@ -409,6 +410,9 @@ public class DBProject {
    			continue;
    		}
    	};
+   	String month = Integer.toString(monthInput);
+   	String day = Integer.toString(dayInput);
+   	String year = Integer.toString(yearInput);
    	Date dob = new Date(yearInput,monthInput,dayInput);
 
    	String gender;
@@ -1054,11 +1058,11 @@ public class DBProject {
         Date temp = new Date(checkyear, checkmonth, checkday);
         checkDate = temp;
    		String query;
-   		//while(true){
-   			//try{
-   				//query = " "
-   			//}
-   		//}
+   		while(true){
+   			try{
+   				query = " "
+   			}
+   		}
       // ...
       // ...
    }//end listHotelRoomBookingsForAWeek
