@@ -413,7 +413,8 @@ public class DBProject {
    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
    	//Date finaldate = new Date(monthInput,dayInput,yearInput);
     String finaldate = monthInput + "-" + dayInput + "-" + yearInput;
-   	String dob = simpleDateFormat.format(finaldate);
+    Date datefinal = formatter.parse(finaldate);
+   	//String dob = simpleDateFormat.format(finaldate);
 	  System.out.println("YOUR GIVEN DATE IS " + dob);
 	
    	String gender;
