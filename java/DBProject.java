@@ -940,6 +940,7 @@ public class DBProject {
    			}catch(Exception e) {
    				System.out.println("Query was not executed.");
    			}
+   		}
       // ...
       // ...
    }//end numberOfAvailableRooms
