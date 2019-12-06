@@ -411,15 +411,15 @@ public class DBProject {
    	};
    	Date dob = new Date(yearInput,monthInput,dayInput);
 
-   	String genderS;
+   	String gender;
    	while(true){
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
-   			genderS = in.readLine();
-   			if(genderS == "0"){
+   			gender = in.readLine();
+   			if(gender == "0"){
    				continue;
    			}
-   			if(genderS != "Male" || genderS != "Female" || genderS != "Other") {
+   			if(gender != "Male" || gender != "Female" || gender != "Other") {
    				throw new RuntimeException("Customer gender must be identified through 'Male', 'Female', or 'Other' ");
    			}
    			break;
