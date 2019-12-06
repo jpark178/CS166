@@ -1322,6 +1322,50 @@ public class DBProject {
    public static void topKHighestPriceBookingsForACustomer(DBProject esql){
 	  // Given a customer Name, List Top K highest booking price for a customer 
       // Your code goes here.
+      
+      String fName;
+      while(true) {
+		  System.out.print("Please enter your first name: ");
+		  try {
+			  fName = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String lName;
+	  while(true) {
+		  System.out.print("Please enter your last name: ");
+		  try {
+			  lName = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String k;
+	  while(true) {
+		  System.out.print("Please enter a range: ");
+		  try {
+			  k = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String query;
+      try {
+		  query = "SELECT price FROM Booking B, Customer C WHERE C.fname = " + fName + " AND C.lName = " + lName + " ORDER BY price LIMIT " + k + ";"; 
+		  esql.executeQuery(query);
+	  } catch (Exception e) {
+		  System.err.prinln(e.getMessage());
+	  }
       // ...
       // ...
    }//end topKHighestPriceBookingsForACustomer
@@ -1337,6 +1381,23 @@ public class DBProject {
    public static void listRepairsMade(DBProject esql){
 	  // Given a Maintenance company name list all the repairs along with repairType, hotelID and roomNo
       // Your code goes here.
+      
+      String maintName;
+      while(true) {
+		  System.out.println("Please enter maintenance company name: ");
+		  try {
+			  maintName = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String query;
+	  try{
+		  query = 
+      
       // ...
       // ...
    }//end listRepairsMade
