@@ -417,7 +417,7 @@ public class DBProject {
     System.out.println(finaldate);
     //Date dob = new SimpleDateFormat.parse(finaldate);
    	//String dob = simpleDateFormat.format(finaldate);
-    String dob = finalDate;
+    String dob = finaldate;
 	
    	String gender;
    	while(true){
