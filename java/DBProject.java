@@ -960,6 +960,7 @@ public class DBProject {
 		try {
 			query = "INSERT INTO Assigned (asgID, staffID, hotelID, roomNo) VALUES (" + assignedID + ", \'" + staffSSN + ", \'" + hotelID + ", \'" + roomNum + "\');";
 			esql.executeUpdate(query);
+			assignedID = assignedID + 1;
 		} catch (Exception e) {
 			System.out.println("Query failed: " + e.getMessage());
 		}
@@ -971,6 +972,78 @@ public class DBProject {
    public static void repairRequest(DBProject esql){
 	  // Given a hotelID, Staff SSN, roomNo, repairID , date create a repair request in the DB
       // Your code goes here.
+      int request = 2000;
+      
+      int hotelID;
+      while(true) {
+		  System.out.println("Please input Hotel ID: ");
+		  try {
+			  hotelID = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  int staffSSN;
+	  while(true) {
+		  System.out.println("Please input Staff SSN: ");
+		  try {
+			  staffSSN = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  int roomNum;
+	  while(true) {
+		  System.out.println("Please input Room number: ");
+		  try {
+			  roomNum = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  int repairID;
+	  while(true) {
+		  System.out.println("Please input Repair ID: ");
+		  try {
+			  repairID = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String description;
+	  while(true) {
+		  System.out.println("Please input a description: ");
+		  try {
+			  description = in.readLine();
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String query;
+	  while(true) {
+		  try {
+			  query = "INSERT INTO Request (reqID, managerID, repairID, requestDate, description) VALUES (" + request + ", \'" + staffSSN + ", \'" + repairID + ", \'" + requestDate + ", \'" + description + "\');";
+			  esql.executeQuery(query);
+			  request = request + 1;
+		  } catch (Exception e) {
+			  System.out.println("Query failed: " + e.getMessage());
+		  }
+	  }
       // ...
       // ...
    }//end repairRequest
