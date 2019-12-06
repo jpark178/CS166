@@ -939,14 +939,15 @@ public class DBProject {
    			}
    		}
    		String query;
-   		try{
-   			query = "SELECT count(B.roomNo)\nFROM Booking B WHERE hotelID = " + hotelID + "\';";
-   			esql.executeQuery(query);
-   			break;
-   		}catch(Exception e){
-   			System.out.println("Your input is invalid!");
+   		while(true){
+   			try{
+   				query = "SELECT count(B.roomNo)\nFROM Booking B WHERE hotelID = " + hotelID + "\';";
+   				esql.executeQuery(query);
+   				break;
+   			}catch(Exception e){
+   				System.out.println("Your input is invalid!");
+   			}
    		}
-
       // ...
       // ...
    }//end numberOfBookedRooms
