@@ -935,7 +935,7 @@ public class DBProject {
    		String query;
    		while(true){
    			try{
-   				query = "SELECT A1.roomNo-B1.roomNo FROM (SELECT R.roomNo FROM Room R WHERE roomNo = " + roomNo ") as A1, (SELECT B.roomNo FROM Booking B WHERE roomNo = " + roomNo ") as B1 WHERE A1.roomNo = B1.roomNo";
+   				query = "SELECT A1.roomNo - B1.roomNo FROM (SELECT R.roomNo FROM Room R WHERE R.hotelID = " + hotelID ") as A1, (SELECT B.roomNo FROM Booking B WHERE B.hotelID = " + hotelID ") as B1 WHERE A1.roomNo = B1.roomNo";
    				esql.executeQuery(query);
    			}catch(Exception e) {
    				System.out.println("Query was not executed.");
