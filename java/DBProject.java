@@ -416,7 +416,7 @@ public class DBProject {
    		System.out.print("Input Customer Gender ( 'Male', 'Female', or 'Other'): ");
    		try{
    			genderS = in.readLine();
-   			if(genderS == '0'){
+   			if(genderS == "0"){
    				continue;
    			}
    			if(genderS != "Male" || genderS != "Female" || genderS != "Other") {
