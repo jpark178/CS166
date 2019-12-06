@@ -412,7 +412,7 @@ public class DBProject {
    		}
    	};
    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-   	Date finaldate = new Date(yearInput,monthInput,dayInput);
+   	Date finaldate = new Date(monthInput,dayInput,yearInput);
    	String dob = simpleDateFormat.format(finaldate);
 	  System.out.println("YOUR GIVEN DATE IS" + dob);
 	
@@ -703,7 +703,7 @@ public class DBProject {
 		  }
 	  };
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-    Date finaldate = new Date(yearInput,monthInput,dayInput);
+    Date finaldate = new Date(monthInput,dayInput,yearInput);
     String repairDate = simpleDateFormat.format(finaldate);
     System.out.println("YOUR GIVEN DATE IS" + repairDate);
   
@@ -748,9 +748,9 @@ public class DBProject {
    public static void bookRoom(DBProject esql){
 	  // Given hotelID, roomNo and customer Name create a booking in the DB 
       // Your code goes here.
-      	int hotelID;
-      	int roomNo;
-      	int customerID;
+      int hotelID;
+      int roomNo;
+      int customerID;
     	String query;
     	String input;
     	int bID;
@@ -868,7 +868,7 @@ public class DBProject {
                   			}
 
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                        Date finaldate = new Date(bookingyear,bookingmonth,bookingday);
+                        Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
                         String bookingDate = simpleDateFormat.format(finaldate);
                         System.out.println("YOUR GIVEN DATE IS" + bookingDate);
 
@@ -1116,7 +1116,7 @@ public class DBProject {
       }
     };
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-    Date finaldate = new Date(yearInput,monthInput,dayInput);
+    Date finaldate = new Date(monthInput,dayInput,yearInput);
     String requestDate = simpleDateFormat.format(finaldate);
     System.out.println("YOUR GIVEN DATE IS" + requestDate);
   
@@ -1266,7 +1266,7 @@ public class DBProject {
             }
         }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-        Date finaldate = new Date(yearInput,monthInput,dayInput);
+        Date finaldate = new Date(checkmonth,checkday,checkyear);
         String dob = simpleDateFormat.format(finaldate);
         System.out.println("YOUR GIVEN DATE IS" + dob);
 
