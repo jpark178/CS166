@@ -181,7 +181,7 @@ public class DBProject {
 				System.out.println("10. Get hotel bookings for a week");
 				System.out.println("11. Get top k rooms with highest price for a date range");
 				System.out.println("12. Get top k highest booking price for a customer");
-				System.out.println("13. Get customer total cost occurred for a give date range"); 
+				System.out.println("13. Get customer total cost occurred for a given date range"); 
 				System.out.println("14. List the repairs made by maintenance company");
 				System.out.println("15. Get top k maintenance companies based on repair count");
 				System.out.println("16. Get number of repairs occurred per year for a given hotel room");
@@ -1459,11 +1459,11 @@ public class DBProject {
 		  }
 	  }
 	  
-	  String endingDate = checkMonth + "/" + checkDay + "/" checkYear;
+	  String endingDate = checkMonth + "/" + checkDay + "/" + checkYear;
 	  
 	  // Ending date end
 	  
-	  int k
+	  int k;
 	  while(true) {
 		  System.out.print("Please enter a range: ");
 		  try {
@@ -1477,7 +1477,8 @@ public class DBProject {
 	  
 	  String query;
 	  try {
-		  query = "SELECT B.bID FROM Booking B WHERE B.bookingDate >= " + startingDate + " AND B.bookingDate <= " + endingDate + " ORDER BY B.price DESC LIMIT " + k + ";";
+		  query = "SELECT * FROM Booking B WHERE B.bookingDate >= '" + startingDate + "'' AND B.bookingDate <= '" + endingDate + "'' ORDER BY B.price DESC LIMIT " + k + ";";
+		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.out.println("Query failed. " + e.getMessage());
 	  }
