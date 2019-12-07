@@ -755,22 +755,23 @@ public class DBProject {
       // ...
    }//end addRepair
 
-   public static void bookRoom(DBProject esql){//DONE
+  public static void bookRoom(DBProject esql){//DONE
 	  // Given hotelID, roomNo and customer Name create a booking in the DB 
       // Your code goes here.
-      int hotelID;
-      int roomNo;
-      int customerID;
-    	String query;
-    	String input;
-    	int bID;
-    	int bookingyear;
-    	int bookingmonth;
-    	int bookingday;
-    	int noOfPeople;
-    	double price;
-	    String temp;
-      String tempdate;
+    int hotelID;
+    int roomNo;
+    int customerID;
+    String query;
+    String input;
+    int bID;
+    int bookingyear;
+    int bookingmonth;
+    int bookingday;
+    int noOfPeople;
+    double price;
+	  String temp;
+    String tempdate;
+    
     	while(true){
         	System.out.print("Please input Customer ID: ");
         	try{
