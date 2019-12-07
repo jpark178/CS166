@@ -1851,23 +1851,10 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
 		  }
 	  }
 	  
-	  int year;
-	  while(true) {
-		  System.out.println("Please enter a year: ");
-		  try {
-			  year = Integer.parseInt(in.readLine());
-			  break;
-		  } catch (Exception e) {
-			  System.out.println("Your input is invalid!");
-		  }
-	  }
-	  
-	  String startingDate = "1/1/" + year;
-	  String endingDate = "12/31/" + year;
       
       String query;
       try {
-      	query = "SELECT EXTRACT(YEAR FROM R.repairDate), COUNT(R.repairType) FROM Repair R WHERE R.roomNo = " + roomNum + " AND R.hotelID + " + hotelID + " GROUP BY EXTRACT(YEAR FROM R.repairDate) ORDER BY EXTRACT(YEAR FROM R.repairDate) DESC";
+      	query = "SELECT EXTRACT (YEAR FROM R.repairDate), COUNT(R.repairType) FROM Repair R WHERE R.roomNo = " + roomNum + " AND R.hotelID = " + hotelID + " GROUP BY EXTRACT(YEAR FROM R.repairDate) ORDER BY EXTRACT(YEAR FROM R.repairDate) DESC";
 		  //query = "SELECT COUNT(rID) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= \'" + startingDate + "\' AND repairDate <= \'" + endingDate + "\';";
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
