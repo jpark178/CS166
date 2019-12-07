@@ -911,13 +911,14 @@ public class DBProject {
               continue;
             }
         	}   
-        }
-        try{
+          try{
       query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + temp + "\', \'" + noOfPeople + "\', \'" + price + "\');";
       esql.executeUpdate(query);
     }catch(Exception f){
       System.out.println("Query failed: " + f.getMessage());
     }
+        }
+
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
       }			
