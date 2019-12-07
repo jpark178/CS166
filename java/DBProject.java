@@ -1478,6 +1478,7 @@ public class DBProject {
 	  String query;
 	  try {
 		  query = "SELECT * FROM Booking B WHERE B.bookingDate >= '" + startingDate + "'' AND B.bookingDate <= '" + endingDate + "'' ORDER BY B.price DESC LIMIT " + k + ";";
+		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.out.println("Query failed. " + e.getMessage());
 	  }
