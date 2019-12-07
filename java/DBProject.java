@@ -919,6 +919,9 @@ public class DBProject {
                   				System.out.println("Query failed: " + e.getMessage());
                 			}
             			}
+                  else{
+                    return;
+                  }
 
       			}catch(Exception e){
             			System.out.println("Your input is invalid!");
@@ -926,6 +929,7 @@ public class DBProject {
             		}
         	}
       	}
+        if()
 
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
