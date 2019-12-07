@@ -181,7 +181,7 @@ public class DBProject {
 				System.out.println("10. Get hotel bookings for a week");
 				System.out.println("11. Get top k rooms with highest price for a date range");
 				System.out.println("12. Get top k highest booking price for a customer");
-				System.out.println("13. Get customer total cost occurred for a give date range"); 
+				System.out.println("13. Get customer total cost occurred for a given date range"); 
 				System.out.println("14. List the repairs made by maintenance company");
 				System.out.println("15. Get top k maintenance companies based on repair count");
 				System.out.println("16. Get number of repairs occurred per year for a given hotel room");
