@@ -1300,6 +1300,7 @@ public class DBProject {
    		String query;
    			try{
    				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= " + bookingDate + ";";
+          esql.executeQuery(query);
    			}catch(Exception e){
 				System.out.println("Query failed. " + e.getMessage());
    			}
