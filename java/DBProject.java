@@ -912,10 +912,10 @@ public class DBProject {
                   				}
                 			}
                 			
-try{
+                      try{
                   				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
                   				esql.executeUpdate(query);
-break;
+                          break;
                 			}catch(Exception e){
                   				System.out.println("Query failed: " + e.getMessage());
                 			}
@@ -928,18 +928,12 @@ break;
             			System.out.println("Your input is invalid!");
               			continue;
             		}
-
-
         	}
-
       	}
-
-
 
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
-    }
-	                			
+    }    			
       // ...
    }//end bookRoom
 
@@ -1142,17 +1136,10 @@ break;
         continue;
       }
     };
-    //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yyyy");
-    //Date finaldate = new Date(monthInput,dayInput,yearInput);
-    //String requestDate = simpleDateFormat.format(finaldate);
-    //System.out.println("YOUR GIVEN DATE IS " + requestDate);
-  
-
     String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
     System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
     System.out.println(finaldate);
-    //Date dob = new SimpleDateFormat.parse(finaldate);
-    //String dob = simpleDateFormat.format(finaldate);
+
     String requestDate = finaldate;
 
 	  String query;
@@ -1312,7 +1299,7 @@ break;
 
    		String query;
    			try{
-   				query = "SELECT B.bID FROM Booking B WHERE B.bookingDate = " + bookingDate + " + interval '7 days';";
+   				query = "SELECT B.bID FROM Booking B WHERE B.bookingDate >= " + bookingDate + ";";
    			}catch(Exception e){
 				System.out.println("Query failed. " + e.getMessage());
    			}
