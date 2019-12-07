@@ -438,6 +438,10 @@ public class DBProject {
    		query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + ", \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + dob + "\',\'" + gender + "\');";
    		//query = "INSERT INTO Customer ( customerID, fName, lName, Address, phNo, DOB, gender) VALUES (" + customerID + "\', \'" + fName + "\', \'" + lName + "\', \'" + address + "\', \'" + phNo + "\', \'" + dob + "\', \'" + gender + "\'');\'";
    		esql.executeUpdate(query);
+   		 System.out.println(
+         "\n\n*******************************************************\n" +
+         "              ADDED CUSTOMER!     	               \n" +
+         "*******************************************************\n");
     }catch(Exception e) {
     	System.err.println("Query failed: " + e.getMessage());
     }
@@ -490,6 +494,10 @@ public class DBProject {
     try{
    		query = "INSERT INTO Room ( hotelID, roomNo, roomType) VALUES (" + hotelID + ", \'" + roomNo + "\', \'" + roomType + "\');";
    		esql.executeUpdate(query);
+   		 System.out.println(
+         "\n\n*******************************************************\n" +
+         "              ADDED ROOM!     	               \n" +
+         "*******************************************************\n");
     }catch(Exception e) {
     	System.err.println("Query failed: " + e.getMessage());
     }
@@ -564,6 +572,10 @@ public class DBProject {
 		try{
 			query = "INSERT INTO MaintenanceCompany (cmpID, name, address, isCertified) VALUES (" + compID + ", \'" + compName + "\', \'" + compAddress + "\', \'" + isCertified + "\');";
 			esql.executeUpdate(query);
+			 System.out.println(
+         "\n\n*******************************************************\n" +
+         "              ADDED MAINTENANCE COMPANY      	               \n" +
+         "*******************************************************\n");
 		}catch(Exception e) {
 			System.err.println("Query failed: " + e.getMessage());
 		}
@@ -748,6 +760,10 @@ public class DBProject {
 		try {
 			query = "INSERT INTO Repair (rID, hotelID, roomNo, mCompany, repairDate, description, repairType) VALUES (" + repairID + ", \'" + hotelID + "\', \'" + roomNum + "\', \'" + maintCompany + "\', \'" + repairDate + "\', \'" + description + "\', \'" + repairType + "\');";
 			esql.executeUpdate(query);
+			System.out.println(
+         "\n\n*******************************************************\n" +
+         "              ADDED REPAIR      	               \n" +
+         "*******************************************************\n");
 		} catch (Exception e) {
 			System.err.println("Query failed: " + e.getMessage());
 	    }
@@ -914,6 +930,10 @@ public class DBProject {
                       try{
                   				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
                   				esql.executeUpdate(query);
+                  				System.out.println(
+         "\n\n*******************************************************\n" +
+         "              ADDED YOUR BOOKING      	               \n" +
+         "*******************************************************\n");
                           break;
                 			}catch(Exception e){
                   				System.out.println("Query failed: " + e.getMessage());
@@ -982,6 +1002,10 @@ public class DBProject {
 		try {
 			query = "INSERT INTO Assigned (asgID, staffID, hotelID, roomNo) VALUES (" + assignedID + ", " + staffSSN + ", " + hotelID + ", " + roomNum + ");";
 			esql.executeUpdate(query);
+			System.out.println(
+         "\n\n*******************************************************\n" +
+         "              ASSIGNED HOUSE CLEANING STAFF      	               \n" +
+         "*******************************************************\n");
 			assignedID = assignedID + 1;
 		} catch (Exception e) {
 			System.out.println("Query failed: " + e.getMessage());
@@ -1146,6 +1170,10 @@ public class DBProject {
 		  try {
 			  query = "INSERT INTO Request (reqID, managerID, repairID, requestDate, description) VALUES (" + request + ", \'" + staffSSN + ", \'" + repairID + ", \'" + requestDate + ", \'" + description + "\');";
 			  esql.executeQuery(query);
+			  System.out.println(
+         "\n\n*******************************************************\n" +
+         "              RAISED REPAIR REQUEST!      	               \n" +
+         "*******************************************************\n");
 			  request = request + 1;
 		  } catch (Exception e) {
 			  System.out.println("Query failed: " + e.getMessage());
@@ -1160,6 +1188,10 @@ public class DBProject {
       // Your code goes here.
    		int hotelID;
    		while(true){
+   			System.out.println(
+         "\n\n*******************************************************\n" +
+         "              FIND AVAILABLE ROOMS!      	               \n" +
+         "*******************************************************\n");
    			System.out.println("Please input hotel ID: ");
    			try{
    				hotelID = Integer.parseInt(in.readLine());
@@ -1175,6 +1207,7 @@ public class DBProject {
    				//query = "SELECT R.hotelID, A1-B1 FROM (SELECT R.roomNo\nFROM Room R\nWHERE R.hotelID = " + hotelID + ") as A1, (SELECT B.roomNo\nFROM Booking B\nWHERE B.hotelID = " + hotelID + ") as B1)";
 				query = "SELECT COUNT(R.roomNo) FROM Room R WHERE R.hotelID = " + hotelID + "\nEXCEPT\nSELECT COUNT(B.roomNo) FROM Booking B WHERE B.hotelID = " + hotelID + ";";
    				esql.executeQuery(query);
+
    			}catch(Exception e) {
    				System.out.println("Query failed: " + e.getMessage());
    			}
@@ -1188,6 +1221,10 @@ public class DBProject {
    		int hotelID;
 
    		while(true){
+   			System.out.println(
+         "\n\n*******************************************************\n" +
+         "              FIND BOOKED ROOMS!      	               \n" +
+         "*******************************************************\n");
    			System.out.println("Please input hotel ID: ");
    			try{
    				hotelID = Integer.parseInt(in.readLine());
@@ -1214,6 +1251,10 @@ public class DBProject {
    public static void listHotelRoomBookingsForAWeek(DBProject esql){
 	  // Given a hotelID, date - list all the rooms available for a week(including the input date) 
       // Your code goes here.
+   	System.out.println(
+         "\n\n*******************************************************\n" +
+         "              LIST BOOKINGS FOR A WEEK      	               \n" +
+         "*******************************************************\n");
    		int hotelID;
    		int checkyear;
    		int checkmonth;
@@ -1321,7 +1362,10 @@ public class DBProject {
    public static void topKHighestRoomPriceForADateRange(DBProject esql){
 	  // List Top K Rooms with the highest price for a given date range
       // Your code goes here.
-      
+      System.out.println(
+         "\n\n*******************************************************\n" +
+         "              LIST ROOMS WITH HIGHEST PRICE OF A DATE RANGE!      	               \n" +
+         "*******************************************************\n");
       int checkYear;
       int checkMonth;
       int checkDay;
@@ -1490,7 +1534,10 @@ public class DBProject {
    public static void topKHighestPriceBookingsForACustomer(DBProject esql){
 	  // Given a customer ID, List Top K highest booking price for a customer 
       // Your code goes here.
-      
+      System.out.println(
+         "\n\n*******************************************************\n" +
+         "              LIST HIGHEST BOOKING PRICE OF A CUSTOMER      	               \n" +
+         "*******************************************************\n");
       int customerID;
       while(true) {
 		  System.out.print("Please enter customer ID: ");
@@ -1518,7 +1565,7 @@ public class DBProject {
 	  
 	  String query;
       try {
-		  query = "SELECT price FROM Booking B, Customer C WHERE C.customerID = " + customerID + " ORDER BY price DESC LIMIT " + k + ";"; 
+		  query = "SELECT B.price FROM Booking B, Customer C WHERE C.customerID = " + customerID + " ORDER BY price DESC LIMIT " + k + ";"; 
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.err.println(e.getMessage());
@@ -1531,6 +1578,10 @@ public class DBProject {
 	  // Given a hotelID, customerID and date range get the total cost incurred by the customer
     //PRICE PER DAY = ROOM COST PER DAY
       // Your code goes here.
+   	System.out.println(
+         "\n\n*******************************************************\n" +
+         "              TOTAL COST OF A CUSTOMER!      	               \n" +
+         "*******************************************************\n");
 	int hotelID;
    	while(true){
    		System.out.println("Please input hotel ID: ");
@@ -1702,7 +1753,10 @@ public class DBProject {
    public static void listRepairsMade(DBProject esql){//DONE
 	  // Given a Maintenance company name list all the repairs along with repairType, hotelID and roomNo
       // Your code goes here.
-      
+      System.out.println(
+         "\n\n*******************************************************\n" +
+         "              LIST ALL REPAIRS OF A MCOMPANY      	               \n" +
+         "*******************************************************\n");
 	int maintID;      
 	//String maintName;
       while(true) {
@@ -1748,7 +1802,10 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
 	  // List Top K Maintenance Company Names based on total repair count (descending order)
       // Your code goes here.
       
-	  
+	  System.out.println(
+         "\n\n*******************************************************\n" +
+         "              LIST MCOMPANIES BASED ON REPAIR COUNT!      	               \n" +
+         "*******************************************************\n");
 	  String k;
 	  while(true) {
 		  System.out.println("Please enter a range: ");
@@ -1775,7 +1832,10 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
       // Your code goes here
-      
+      System.out.println(
+         "\n\n*******************************************************\n" +
+         "              FIND REPAIRS PER YEAR      	               \n" +
+         "*******************************************************\n");
       int hotelID;
       while(true) {
 		  System.out.println("Please enter a hotel ID: ");
