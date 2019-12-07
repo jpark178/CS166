@@ -1305,7 +1305,7 @@ public class DBProject {
    		String query;
    			try{
    				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= '" + bookingDate + "';"; //"' AND B.bookingDate <= '" + bookingendDate + "';";
-          esql.executeQuery(query);
+          //esql.executeQuery(query);
           if(esql.executeQuery(query) == 0) {
             System.out.println("There are no available rooms in this hotel this week.");
           }
