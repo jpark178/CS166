@@ -1253,7 +1253,7 @@ public class DBProject {
       // Your code goes here.
    	System.out.println(
          "\n\n*******************************************************\n" +
-         "              LIST BOOKINGS FOR A WEEK      	               \n" +
+         "              LIST BOOKINGS FOR THE WEEK!      	               \n" +
          "*******************************************************\n");
    		int hotelID;
    		int checkyear;
@@ -1344,7 +1344,7 @@ public class DBProject {
 
    		String query;
    			try{
-   				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= '" + bookingDate + "';"; //"' AND B.bookingDate <= '" + bookingendDate + "';";
+   				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= \'" + bookingDate + "\' AND B.bookingDate <= \'" + bookingendDate + "\';";
           //esql.executeQuery(query);
           if(esql.executeQuery(query) != 0) {
             System.out.println("These are the available rooms in hotel (HotelID: " + hotelID + " ) this week. ");
@@ -1874,7 +1874,8 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
       
       String query;
       try {
-		  query = "SELECT COUNT(rID) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= \'" + startingDate + "\' AND repairDate <= \'" + endingDate + "\';";
+      	query = "SELECT EXTRACT(year FROM R"
+		  //query = "SELECT COUNT(rID) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= \'" + startingDate + "\' AND repairDate <= \'" + endingDate + "\';";
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.err.println(e.getMessage());
