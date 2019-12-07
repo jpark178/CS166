@@ -1459,11 +1459,11 @@ public class DBProject {
 		  }
 	  }
 	  
-	  String endingDate = checkMonth + "/" + checkDay + "/" checkYear;
+	  String endingDate = checkMonth + "/" + checkDay + "/" + checkYear;
 	  
 	  // Ending date end
 	  
-	  int k
+	  int k;
 	  while(true) {
 		  System.out.print("Please enter a range: ");
 		  try {
