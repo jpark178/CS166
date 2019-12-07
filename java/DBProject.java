@@ -810,7 +810,7 @@ public class DBProject {
       		while(true){
             if (check == 0) {
       			 System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
-             check - 1;
+             check = 1;
             }
             else {
               System.out.println("Create a new booking?(y/n): ");
