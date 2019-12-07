@@ -920,6 +920,7 @@ public class DBProject {
       esql.executeUpdate(query);
     }catch(Exception f){
       System.out.println("Query failed: " + f.getMessage());
+    }
     }			
      } // ...
   }//end bookRoom
