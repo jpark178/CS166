@@ -1306,11 +1306,11 @@ public class DBProject {
    			try{
    				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= '" + bookingDate + "';"; //"' AND B.bookingDate <= '" + bookingendDate + "';";
           //esql.executeQuery(query);
-          if(esql.executeQuery(query) == 0) {
-            System.out.println("There are no available rooms in this hotel this week.");
+          if(esql.executeQuery(query) != 0) {
+            System.out.println("These are the available rooms in hotel (HotelID: " + hotelID + " ). ");
           }
           else{
-            System.out.println("The available rooms in hotel (HotelID: " + hotelID + " ) are : ");
+            System.out.println("There are no available rooms in this hotel this week.");
           }
    			}catch(Exception e){
 				System.out.println("Query failed. " + e.getMessage());
