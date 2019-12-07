@@ -769,7 +769,8 @@ public class DBProject {
     	int bookingday;
     	int noOfPeople;
     	double price;
-	String temp;
+	    String temp;
+      String tempdate;
     	while(true){
         	System.out.print("Please input Customer ID: ");
         	try{
@@ -781,161 +782,149 @@ public class DBProject {
         	}
      	}
 
-      	while(true){
-        	System.out.print("Please input Hotel ID: ");
-        	try{
-          		hotelID = Integer.parseInt(in.readLine());
-          		break;
-        	}catch (Exception e) {
-          		System.out.println("Your Input is invalid!");
-          		continue;
-        	}
-      	}
+      while(true){
+        System.out.print("Please input Hotel ID: ");
+        try{
+          hotelID = Integer.parseInt(in.readLine());
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
 
-      	while(true){
-        	System.out.print("Please input Room Number: ");
-        	try{
-          		roomNo = Integer.parseInt(in.readLine());
-          		break;
-        	}catch (Exception e) {
-          		System.out.println("Your Input is invalid!");
-          		continue;
-        	}
-      	}
+      while(true){
+        System.out.print("Please input Room Number: ");
+        try{
+          roomNo = Integer.parseInt(in.readLine());
+          break;
+        }catch (Exception e) {
+          System.out.println("Your Input is invalid!");
+          continue;
+        }
+      }
+
     	try{//try1
-      		query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
-      		if(esql.executeQuery(query) == 0) {
-      			while(true){
-      				System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
-      				try{//try2
-      					input = in.readLine();
-      					if(input.equals("y") || input.equals("Y")) {
-							while(true){
-								System.out.print("Please input Booking Number: ");
-								try{//try3
-									bID = Integer.parseInt(in.readLine());
-									break;
-								}catch (Exception e) {// catch1
-							    	System.out.println("Your input is invalid!");
-						    	}
-      				  		}
-                			while(true){
-                  				System.out.println("Booking Date is required!");
-                  				System.out.print("Please input Booking Date Year: ");
-                  				try{
-                    				bookingyear = Integer.parseInt(in.readLine());
-                    				if(bookingyear == 0) {
-                      					throw new RuntimeException("Booking date year cannot be left blank.");
-                    				}
-                    				if(bookingyear < 0 || bookingyear > 9999) {
-                      					throw new RuntimeException("Please input valid year (1 - 9999).");
-                    				}
-                    				break;
-                  				}catch(Exception e) {
-                    				System.out.println("Your input is invalid");
-                  				}
-                  		}
-                  		while(true){
-                  			System.out.print("Please input Booking Date Month: ");
-                  			try{
-                    			bookingmonth = Integer.parseInt(in.readLine());
-                    			if(bookingmonth == 0) {
-                      				throw new RuntimeException("Booking date month cannot be left blank.");
-                    			}
-                    			if(bookingmonth < 0 || bookingmonth > 12) {
-                      				throw new RuntimeException("Please input valid month (1 - 12).");
-                    			}
-                    			break;
-                  			}catch(Exception e) {
-                    			System.out.println("Your input is invalid");
-               	   			}
-               	   		}
-               	   		while(true){
-               	   			System.out.print("Please input Booking Date Day: ");
-                  			try{
-                    			bookingday = Integer.parseInt(in.readLine());
-                    			if(bookingday == 0) {
-                      				throw new RuntimeException("Booking date day cannot be left blank.");
-                    			}
-                    			if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
-                      				if(bookingday <= 0 || bookingday > 31) {
-                        				throw new RuntimeException("Please input valid date.");
-                      				}
-                    			}
-                    			if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
-                      				if(bookingday <= 0 || bookingday > 30) {
-                        				throw new RuntimeException("Please input valid date.");
-                      				}
-                    			}
-                    			if(bookingmonth == 2) {
-                      				if(bookingday <= 0 || bookingday > 28) {
-                        				throw new RuntimeException("Please input valid date.");
-                      				}
-                    			}
-                    			break;
-                  			}catch(Exception e) {
-                    			System.out.println("Your input is invalid");
-                  			}
-                  		}
+      	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
+      	if(esql.executeQuery(query) == 0) {
+      		while(true){
+      			System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
+      			try{//try2
+      				input = in.readLine();
+      				if(input.equals("y") || input.equals("Y")) {
+							  while(true){
+								  System.out.print("Please input Booking Number: ");
+								  try{//try3
+									 bID = Integer.parseInt(in.readLine());
+									 break;
+								  }catch (Exception e) {// catch1
+							      System.out.println("Your input is invalid!");
+						      }
+      				  }
+                while(true){
+                  System.out.println("Booking Date is required!");
+                  System.out.print("Please input Booking Date Year: ");
+                  try{
+                    bookingyear = Integer.parseInt(in.readLine());
+                    if(bookingyear == 0) {
+                      throw new RuntimeException("Booking date year cannot be left blank.");
+                    }
+                    if(bookingyear < 0 || bookingyear > 9999) {
+                      throw new RuntimeException("Please input valid year (1 - 9999).");
+                    }
+                    break;
+                  }catch(Exception e) {
+                    System.out.println("Your input is invalid");
+                  }
+                }
+                while(true){
+                  System.out.print("Please input Booking Date Month: ");
+                  try{
+                    bookingmonth = Integer.parseInt(in.readLine());
+                    if(bookingmonth == 0) {
+                      throw new RuntimeException("Booking date month cannot be left blank.");
+                    }
+                    if(bookingmonth < 0 || bookingmonth > 12) {
+                      throw new RuntimeException("Please input valid month (1 - 12).");
+                    }
+                    break;
+                  }catch(Exception e) {
+                    System.out.println("Your input is invalid");
+               	  }
+               	}
+               	while(true){
+               	  System.out.print("Please input Booking Date Day: ");
+                  try{
+                    bookingday = Integer.parseInt(in.readLine());
+                    if(bookingday == 0) {
+                      throw new RuntimeException("Booking date day cannot be left blank.");
+                    }
+                    if(bookingmonth == 1 || bookingmonth == 3 || bookingmonth == 5 || bookingmonth == 7 || bookingmonth == 8 || bookingmonth == 10 || bookingmonth == 12) {
+                      if(bookingday <= 0 || bookingday > 31) {
+                        throw new RuntimeException("Please input valid date.");
+                      }
+                    }
+                    if(bookingmonth == 4 || bookingmonth == 6 || bookingmonth == 9 || bookingmonth == 11) {
+                      if(bookingday <= 0 || bookingday > 30) {
+                        throw new RuntimeException("Please input valid date.");
+                      }
+                    }
+                    if(bookingmonth == 2) {
+                      if(bookingday <= 0 || bookingday > 28) {
+                        throw new RuntimeException("Please input valid date.");
+                      }
+                    }
+                    break;
+                  }catch(Exception e) {
+                    System.out.println("Your input is invalid");
+                  }
+                }
 
-                      //SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM/dd/yyyy");
-                      //Date finaldate = new Date(bookingmonth,bookingday,bookingyear);
-                      //String bookingDate = simpleDateFormat.format(finaldate);
-                      //System.out.println("YOUR GIVEN DATE IS " + bookingDate);
-
-                      String finaldate = bookingmonth + "/" + bookingday + "/" + bookingyear;
-                      System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
-                      System.out.println(finaldate);
-                      //Date dob = new SimpleDateFormat.parse(finaldate);
-                      //String dob = simpleDateFormat.format(finaldate);
-                      String bookingDate = finaldate;
-			String tempDate = bookingDate;
-
-
-                			while(true){
-                 				System.out.print("Please input the number of People for the Booking: ");
-                 				try{
-                    				noOfPeople = Integer.parseInt(in.readLine());
-                    				break;
-                 				}catch (Exception e) {
-                   					System.out.println("Your input is invalid!");
-                  				}
-                			}
+                String finaldate = bookingmonth + "/" + bookingday + "/" + bookingyear;
+                System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
+                System.out.println(finaldate);
+                temp = finaldate;
+			          
+                while(true){
+                 	System.out.print("Please input the number of People for the Booking: ");
+                 	try{
+                    noOfPeople = Integer.parseInt(in.readLine());
+                    break;
+                 	}catch (Exception e) {
+                   	System.out.println("Your input is invalid!");
+                  }
+                }
                 			//PRICE IS DATATYPE NUMERIC(6,2) XXXXXX.XX <==== FIX
-                			while(true) {
-                  				System.out.print("Please input the Price: ");
-                  				try{
-                    				price = Double.parseDouble(in.readLine());
-                    				break;
-                  				}catch(Exception e) {
-                    				System.out.println("Your input is invalid!");
-                  				}
-                			}
-                			
-                      try{
-                  				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-                  				esql.executeUpdate(query);
-                          break;
-                			}catch(Exception e){
-                  				System.out.println("Query failed: " + e.getMessage());
-                			}
-            			}else if(input.equals("n") || input.equals("N")) {
-                			System.out.println("Goodbye!");
-                      			break;
-              			}
-
+                while(true) {
+                  System.out.print("Please input the Price: ");
+                  try{
+                    price = Double.parseDouble(in.readLine());
+                    break;
+                  }catch(Exception e) {
+                    System.out.println("Your input is invalid!");
+                  }
+                }
+              }
       			}catch(Exception e){
-            			System.out.println("Your input is invalid!");
-              			continue;
-            		}
+            	System.out.println("Your input is invalid!");
+              continue;
+            }
         	}
+          String tempDate = bookingDate;
+          try{
+            query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
+            esql.executeUpdate(query);
+            break;
+          }catch(Exception e){
+            System.out.println("Query failed: " + e.getMessage());
+          }
       	}
 
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
     }    			
       // ...
-   }//end bookRoom
+  }//end bookRoom
 
    public static void assignHouseCleaningToRoom(DBProject esql){//DONE
 	  // Given Staff SSN, HotelID, roomNo Assign the staff to the room 
