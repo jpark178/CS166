@@ -884,6 +884,7 @@ public class DBProject {
                 System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
                 System.out.println(finaldate);
                 temp = finaldate;
+                          String tempDate = bookingDate;
 			          
                 while(true){
                  	System.out.print("Please input the number of People for the Booking: ");
@@ -910,7 +911,7 @@ public class DBProject {
               continue;
             }
         	}
-          String tempDate = bookingDate;
+
           try{
             query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
             esql.executeUpdate(query);
