@@ -1871,13 +1871,13 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
 	  String endingDate = "12/31/" + year;
       
       String query;
-      try {
-      	query = "SELECT EXTRACT(year FROM R"
+      //try {
+      	//query = "SELECT EXTRACT(year FROM R";
 		  //query = "SELECT COUNT(rID) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= \'" + startingDate + "\' AND repairDate <= \'" + endingDate + "\';";
-		  esql.executeQuery(query);
-	  } catch (Exception e) {
-		  System.err.println(e.getMessage());
-	  }
+		//  esql.executeQuery(query);
+	  //} catch (Exception e) {
+		//  System.err.println(e.getMessage());
+	  //}
       // ...
       // ...
    }//end listRepairsMade
