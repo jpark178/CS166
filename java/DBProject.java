@@ -1689,7 +1689,7 @@ public class DBProject {
 
 	String query;
 		try{
-			query = "SELECT C.customerID, SUM(B.price) FROM Customer C, Booking B WHERE B.hotelID = " + hotelID + " AND C.customerID = " + customerID +  /*" AND B.bookingDate >= " + startDate + " AND B.bookingDate <= " + endDate + */" GROUP BY C.customerID;";
+			query = "SELECT C.customerID, SUM(B.price) FROM Customer C, Booking B WHERE B.hotelID = " + hotelID + " AND C.customerID = " + customerID +  " AND B.bookingDate >= \'" + startDate + "\' AND B.bookingDate <= \'" + endDate + "\' GROUP BY C.customerID;";
 			esql.executeQuery(query);
 		}catch(Exception e){
 			System.out.println("Query failed. " + e.getMessage());
