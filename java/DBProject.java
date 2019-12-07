@@ -1773,8 +1773,51 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
    
    public static void numberOfRepairsForEachRoomPerYear(DBProject esql){
 	  // Given a hotelID, roomNo, get the count of repairs per year
-      // Your code goes here.
-	String query;
+      // Your code goes here
+      
+      int hotelID;
+      while(true) {
+		  System.out.println("Please enter a hotel ID: ");
+		  try {
+			  hotelID = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+		  }
+	  }
+	  
+	  int roomNum;
+	  while(true) {
+		  System.out.println("Please enter a room number: ");
+		  try {
+			  roomNum = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+		  }
+	  }
+	  
+	  int year;
+	  while(true) {
+		  System.out.println("Please enter a year: ");
+		  try {
+			  year = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+		  }
+	  }
+	  
+	  String startingDate = "1/1/" + year;
+	  String endingDate = "12/31/" + year;
+      
+      String query;
+      try {
+		  query = "SELECT COUNT(*) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= " + startingDate + " AND repairDate <= " + endingDate + ";";
+		  esql.executeQuery(query);
+	  } catch (Exception e) {
+		  System.err.println(e.getMessage());
+	  }
       // ...
       // ...
    }//end listRepairsMade
