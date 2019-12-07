@@ -1293,6 +1293,8 @@ public class DBProject {
         String finaldate = checkmonth + "/" + checkday + "/" + checkyear;
         System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
         System.out.println(finaldate);
+        System.out.println("The Date after a week is: ");
+        System.out.println(finalendDate);
         //Date dob = new SimpleDateFormat.parse(finaldate);
         //String dob = simpleDateFormat.format(finaldate);
         String bookingDate = finaldate;
