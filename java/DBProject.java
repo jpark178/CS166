@@ -1167,7 +1167,7 @@ public class DBProject {
 	  String query;
 	  while(true) {
 		  try {
-			  query = "INSERT INTO Request (reqID, managerID, repairID, requestDate, description) VALUES (" + request + "\', \'" + staffSSN + "\', \'" + repairID + "\', \'" + requestDate + "\', \'" + description + "\');";
+			  query = "INSERT INTO Request (reqID, managerID, repairID, requestDate, description) VALUES (" + reqID + "\', \'" + staffSSN + "\', \'" + repairID + "\', \'" + requestDate + "\', \'" + description + "\');";
 			  esql.executeQuery(query);
 			  System.out.println(
          "\n\n*******************************************************\n" +
