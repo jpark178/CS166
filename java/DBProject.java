@@ -770,7 +770,6 @@ public class DBProject {
     	int noOfPeople;
     	double price;
 	    String temp;
-      String tempdate;
     	while(true){
         	System.out.print("Please input Customer ID: ");
         	try{
@@ -883,8 +882,8 @@ public class DBProject {
                 String finaldate = bookingmonth + "/" + bookingday + "/" + bookingyear;
                 System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
                 System.out.println(finaldate);
-                temp = finaldate;
-			          
+                String bookingDate = finaldate;
+			          String tempDate = bookingDate;
                 while(true){
                  	System.out.print("Please input the number of People for the Booking: ");
                  	try{
@@ -893,39 +892,39 @@ public class DBProject {
                  	}catch (Exception e) {
                    	System.out.println("Your input is invalid!");
                   }
-                }
+                			}
                 			//PRICE IS DATATYPE NUMERIC(6,2) XXXXXX.XX <==== FIX
-                while(true) {
-                  System.out.print("Please input the Price: ");
-                  try{
-                    price = Double.parseDouble(in.readLine());
-                    break;
-                  }catch(Exception e) {
-                    System.out.println("Your input is invalid!");
-                  }
-                }
+                			while(true) {
+                  				System.out.print("Please input the Price: ");
+                  				try{
+                    				price = Double.parseDouble(in.readLine());
+                    				break;
+                  				}catch(Exception e) {
+                    				System.out.println("Your input is invalid!");
+                  				}
+                			}
                 			
-                try{
-                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-                  esql.executeUpdate(query);
-                  break;
-                }catch(Exception e){
-                  System.out.println("Query failed: " + e.getMessage());
-                }
-              }
+                      try{
+                  				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
+                  				esql.executeUpdate(query);
+                          break;
+                			}catch(Exception e){
+                  				System.out.println("Query failed: " + e.getMessage());
+                			}
+            			}
+
       			}catch(Exception e){
-            	System.out.println("Your input is invalid!");
-              continue;
-            }
+            			System.out.println("Your input is invalid!");
+              			continue;
+            		}
         	}
-          String tempDate = bookingDate;
       	}
 
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
     }    			
       // ...
-  }//end bookRoom
+   }//end bookRoom
 
    public static void assignHouseCleaningToRoom(DBProject esql){//DONE
 	  // Given Staff SSN, HotelID, roomNo Assign the staff to the room 
