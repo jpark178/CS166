@@ -1309,6 +1309,9 @@ public class DBProject {
           if(esql.executeQuery(query) == 0) {
             System.out.println("There are no available rooms in this hotel this week.");
           }
+          else{
+            System.out.println("The available rooms in hotel (HotelID: " + hotelID " ) are : ");
+          }
    			}catch(Exception e){
 				System.out.println("Query failed. " + e.getMessage());
    			}
