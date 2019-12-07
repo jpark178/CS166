@@ -758,6 +758,7 @@ public class DBProject {
    public static void bookRoom(DBProject esql){//DONE
 	  // Given hotelID, roomNo and customer Name create a booking in the DB 
       // Your code goes here.
+    int check = 0;
       int hotelID;
       int roomNo;
       int customerID;
@@ -770,7 +771,6 @@ public class DBProject {
     	int noOfPeople;
     	double price;
 	    String temp;
-      String tempdate;
     	while(true){
         	System.out.print("Please input Customer ID: ");
         	try{
@@ -808,7 +808,13 @@ public class DBProject {
       	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
       	if(esql.executeQuery(query) == 0) {
       		while(true){
-      			System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
+            if (check == 0) {
+      			 System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
+             check = 1;
+            }
+            else {
+              System.out.println("Create a new booking?(y/n): ");
+            }
       			try{//try2
       				input = in.readLine();
       				if(input.equals("y") || input.equals("Y")) {
@@ -883,48 +889,52 @@ public class DBProject {
                 String finaldate = bookingmonth + "/" + bookingday + "/" + bookingyear;
                 System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
                 System.out.println(finaldate);
-                temp = finaldate;
-			          
+                String bookingDate = finaldate;
+			          String tempDate = bookingDate;
                 while(true){
                  	System.out.print("Please input the number of People for the Booking: ");
                  	try{
                     noOfPeople = Integer.parseInt(in.readLine());
                     break;
-                 	}catch (Exception e) {
-                   	System.out.println("Your input is invalid!");
-                  }
-                }
+                 				}catch (Exception e) {
+                   					System.out.println("Your input is invalid!");
+                  				}
+                			}
                 			//PRICE IS DATATYPE NUMERIC(6,2) XXXXXX.XX <==== FIX
-                while(true) {
-                  System.out.print("Please input the Price: ");
-                  try{
-                    price = Double.parseDouble(in.readLine());
-                    break;
-                  }catch(Exception e) {
-                    System.out.println("Your input is invalid!");
+                			while(true) {
+                  				System.out.print("Please input the Price: ");
+                  				try{
+                    				price = Double.parseDouble(in.readLine());
+                    				break;
+                  				}catch(Exception e) {
+                    				System.out.println("Your input is invalid!");
+                  				}
+                			}
+                			
+                      try{
+                  				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
+                  				esql.executeUpdate(query);
+                          break;
+                			}catch(Exception e){
+                  				System.out.println("Query failed: " + e.getMessage());
+                			}
+            			}
+                  else{
+                    return;
                   }
-                }
-              }
+
       			}catch(Exception e){
-            	System.out.println("Your input is invalid!");
-              continue;
-            }
+            			System.out.println("Your input is invalid!");
+              			continue;
+            		}
         	}
-          while(true){
-            try{
-              query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + temp + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-              esql.executeUpdate(query);
-              break;
-            }catch(Exception e){
-              System.out.println("Query failed: " + e.getMessage());
-            }
-      	  }
-        }
+      	}
+
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
     }    			
       // ...
-  }//end bookRoom
+   }//end bookRoom
 
    public static void assignHouseCleaningToRoom(DBProject esql){//DONE
 	  // Given Staff SSN, HotelID, roomNo Assign the staff to the room 
