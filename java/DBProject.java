@@ -1814,7 +1814,7 @@ query = "SELECT M.name, R.rID, R.repairType, R.hotelID, R.roomNo FROM Repair R, 
       
       String query;
       try {
-		  query = "SELECT COUNT(*) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= " + startingDate + " AND repairDate <= " + endingDate + ";";
+		  query = "SELECT COUNT(*) FROM Repair WHERE hotelID = " + hotelID + " AND roomNo = " + roomNum + " AND repairDate >= '" + startingDate + "'' AND repairDate <= '" + endingDate + "';";
 		  esql.executeQuery(query);
 	  } catch (Exception e) {
 		  System.err.println(e.getMessage());
