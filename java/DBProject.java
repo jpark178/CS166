@@ -929,7 +929,6 @@ public class DBProject {
             		}
         	}
       	}
-        if()
 
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
