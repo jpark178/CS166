@@ -1166,7 +1166,7 @@ public class DBProject {
       esql.executeUpdate(query);
    }
    catch(Exception e) {
-      System.out.println(e);
+      System.out.println("Query failed. " + e.getMessage());
    }
       // ...
       // ...
