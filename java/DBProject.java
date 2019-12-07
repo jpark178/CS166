@@ -1299,7 +1299,7 @@ public class DBProject {
 
    		String query;
    			try{
-   				query = "SELECT * FROM Booking B WHERE B.bookingDate >= " + bookingDate + ";";
+   				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= " + bookingDate + ";";
    			}catch(Exception e){
 				System.out.println("Query failed. " + e.getMessage());
    			}
