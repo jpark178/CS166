@@ -807,7 +807,7 @@ public class DBProject {
       	query = "SELECT bID\nFROM Booking\nWHERE hotelID = " + hotelID + " AND roomNo = " + roomNo + " AND customer = " + customerID + ";";
       	if(esql.executeQuery(query) == 0) {
       		while(true){
-      			System.out.println("Your Booking does not yet exist. Would you like to create a new Booking?(y/n): ");
+      			System.out.println("Create a new Booking?(y/n): ");
       			try{//try2
       				input = in.readLine();
       				if(input.equals("y") || input.equals("Y")) {
@@ -906,7 +906,8 @@ public class DBProject {
                 			
                       try{
                   				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-                  				esql.executeUpdate(query);
+                  				if(esql.executeUpdate(query) == 0){
+                            System.out.println("BookingID exists make new booking.");
                           break;
                 			}catch(Exception e){
                   				System.out.println("Query failed: " + e.getMessage());
