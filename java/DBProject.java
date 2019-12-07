@@ -1017,7 +1017,6 @@ public class DBProject {
    public static void repairRequest(DBProject esql){//DONE
 	  // Given a hotelID, Staff SSN, roomNo, repairID , date create a repair request in the DB
       // Your code goes here.
-      int request = 2000;
       
       int hotelID;
       while(true) {
@@ -1174,7 +1173,6 @@ public class DBProject {
          "\n\n*******************************************************\n" +
          "              RAISED REPAIR REQUEST!      	               \n" +
          "*******************************************************\n");
-			  request = request + 1;
 		  } catch (Exception e) {
 			  System.out.println("Query failed: " + e.getMessage());
 		  }
