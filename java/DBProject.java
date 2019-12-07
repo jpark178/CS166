@@ -1023,7 +1023,6 @@ public class DBProject {
    int reqID;
    int staffSSN;
    int repairID;
-   Date requestDate;
    String description;
 
    //get reqID
