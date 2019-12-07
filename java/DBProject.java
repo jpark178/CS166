@@ -1020,65 +1020,134 @@ public class DBProject {
    public static void repairRequest(DBProject esql){//DONE
 	  // Given a hotelID, Staff SSN, roomNo, repairID , date create a repair request in the DB
       // Your code goes here.
-      int reqID;
-   int SSN;
+   int reqID;
+   int staffSSN;
    int repairID;
    Date requestDate;
    String description;
 
    //get reqID
    while(true) {
-      System.out.print("Input RequestID: ");
+      System.out.print("Input Request ID: ");
       try {
          reqID = Integer.parseInt(in.readLine());
          break;
       }
       catch(Exception e) {
-         System.out.println("Not a valid ReqID");
-         System.out.println(e);
+         System.out.println("Your input is invalid!");
          continue;
       }
    }
    //get SSN
    while(true) {
-      System.out.print("Input manger ID: ");
+      System.out.print("Input manager ID: ");
       try {
-         SSN = Integer.parseInt(in.readLine());
+         staffSSN = Integer.parseInt(in.readLine());
          break;
       }
       catch(Exception e) {
-         System.out.println("Not a valid SSN");
-         System.out.println(e);
+         System.out.println("Your input is invalid");
          continue;
       }
    }   
    //get repairID
    while(true) {
-      System.out.print("Input RepairID: ");
+      System.out.print("Input Repair ID: ");
       try {
          repairID = Integer.parseInt(in.readLine());
          break;
       }
       catch(Exception e) {
-         System.out.println("Not a valid RepairID");
-         System.out.println(e);
+         System.out.println("Your input is invalid.");
          continue;
       }
    }
-   //get date
-   while(true) {
-      System.out.print("Input Date of Repair: ");
+   int yearInput;
+    int monthInput;
+    int dayInput;
+    boolean isLeap;
+    
+    while(true) {
+      System.out.print("Input Repair date year: ");
+      try{
+        yearInput = Integer.parseInt(in.readLine());
+        if(yearInput == 0) {
+          throw new RuntimeException("Repair date year cannot be left blank.");
+        }
+        if(yearInput <= 0 || yearInput > 9999) {
+          throw new RuntimeException("Please input valid year (1 - 9999).");
+        }
+        break;
+      } catch (Exception e) {
+        System.out.println("Your input is invalid!");
+        continue;
+      }
+    };
+    
+    // Checking for leap year.
+    if(yearInput % 4 == 0) {
+      if(yearInput % 100 == 0) {
+        if(yearInput % 400 == 0) {
+          isLeap = true;
+        } else {
+          isLeap = false;
+        }
+      } else {
+        isLeap = true;
+      }
+    } else {
+      isLeap = false;
+    }
+
+    while(true) {
+      System.out.print("Input Repair date month: ");
       try {
-         SimpleDateFormat dateFormat = new SimpleDateFormat("mm/dd/yyyy");
-         requestDate = dateFormat.parse(in.readLine());
-         break;
+        monthInput = Integer.parseInt(in.readLine());
+        if(monthInput == 0) {
+          throw new RuntimeException("Repair date month cannot be left blank.");
+        }
+        if(monthInput < 0 || monthInput > 12) {
+          throw new RuntimeException("Please input valid month (1 - 12).");
+        }
+        break;
+      } catch (Exception e) {
+        System.out.println("Your input is invalid!");
+        continue;
       }
-      catch(Exception e) {
-         System.out.println("Not a valid date");
-         System.out.println(e);
-         continue;
+    };
+    while(true) {
+      System.out.print("Input Repair date day: ");
+      try {
+        dayInput = Integer.parseInt(in.readLine());
+        if(dayInput == 0) {
+          throw new RuntimeException("Repair date day cannot be left blank.");
+        }
+        if(monthInput == 1 || monthInput == 3 || monthInput == 5 || monthInput == 7 || monthInput == 8 || monthInput == 10 || monthInput == 12) {
+          if(dayInput <= 0 || dayInput > 31) {
+            throw new RuntimeException("Please input valid date.");
+          }
+        }
+        if(monthInput == 4 || monthInput == 6 || monthInput == 9 || monthInput == 11) {
+          if(dayInput <= 0 || dayInput > 30) {
+            throw new RuntimeException("Please input valid date.");
+          }
+        }
+        if(monthInput == 2) {
+          if(dayInput <= 0 || dayInput > 28) {
+            throw new RuntimeException("Please input valid date.");
+          }
+        }
+        break;
+      } catch (Exception e) {
+        System.out.println("Your input is invalid!");
+        continue;
       }
-   }
+    };
+    String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
+    System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
+    System.out.println(finaldate);
+    String requestDate = finaldate;
+
    //get Description
    while(true) {
       System.out.print("Input repair description: ");
@@ -1087,15 +1156,14 @@ public class DBProject {
          break;
       }
       catch(Exception e) {
-         System.out.println("Not a valid description");
-         System.out.println(e);
+         System.out.println("Your input is invalid.");
          continue;
       }
    }
-
+   String query;
   try {
-      String esqlQuery = "INSERT INTO Request(reqID, managerID, repairID, requestDate, description) VALUES( " + reqID + ", " + SSN + ", " + repairID + ",\' " + requestDate + " \', \' " + description + " \');";
-      esql.executeUpdate(esqlQuery);
+      query = "INSERT INTO Request(reqID, managerID, repairID, requestDate, description) VALUES( " + reqID + ", " + staffSSN + ", " + repairID + ",\' " + requestDate + " \', \' " + description + " \');";
+      esql.executeUpdate(query);
    }
    catch(Exception e) {
       System.out.println(e);
