@@ -913,6 +913,7 @@ public class DBProject {
           try{
             query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + temp + "\', \'" + noOfPeople + "\', \'" + price + "\');";
             esql.executeUpdate(query);
+            break;
           }catch(Exception e){
             System.out.println("Query failed: " + e.getMessage());
           }
