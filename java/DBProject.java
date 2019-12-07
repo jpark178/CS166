@@ -918,8 +918,8 @@ public class DBProject {
             }catch(Exception e){
               System.out.println("Query failed: " + e.getMessage());
             }
-      	}
-
+      	  }
+        }
     	}catch(Exception e){
         System.out.println("Your input is invalid!");
     }    			
