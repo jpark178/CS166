@@ -1018,6 +1018,18 @@ public class DBProject {
 	  // Given a hotelID, Staff SSN, roomNo, repairID , date create a repair request in the DB
       // Your code goes here.
       
+      int reqID;
+      while(true) {
+		  System.out.println("Please input request ID: ");
+		  try {
+			  reqID = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+
       int hotelID;
       while(true) {
 		  System.out.println("Please input Hotel ID: ");
@@ -1167,7 +1179,7 @@ public class DBProject {
 	  String query;
 	  while(true) {
 		  try {
-			  query = "INSERT INTO Request (reqID, managerID, repairID, requestDate, description) VALUES (" + repairID + "\', \'" + staffSSN + "\', \'" + repairID + "\', \'" + requestDate + "\', \'" + description + "\');";
+			  query = "INSERT INTO Request (reqID, managerID, repairID, requestDate, description) VALUES (" + reqID + "\', \'" + staffSSN + "\', \'" + repairID + "\', \'" + requestDate + "\', \'" + description + "\');";
 			  esql.executeQuery(query);
 			  System.out.println(
          "\n\n*******************************************************\n" +
