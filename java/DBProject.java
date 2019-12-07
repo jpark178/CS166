@@ -1296,10 +1296,12 @@ public class DBProject {
         //Date dob = new SimpleDateFormat.parse(finaldate);
         //String dob = simpleDateFormat.format(finaldate);
         String bookingDate = finaldate;
+        String finalenddate = checkmonth + "/" + (checkday+7) + "/" + checkyear;
+        String bookingendDate = finalenddate;
 
    		String query;
    			try{
-   				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= '" + bookingDate + "';";
+   				query = "SELECT R.roomNo FROM Booking B, Room R WHERE B.hotelID = " + hotelID + " AND R.hotelID = " + hotelID + "AND B.bookingDate >= '" + bookingDate + "' AND B.bookingDate <= '" + bookingendDate + "';";
           esql.executeQuery(query);
    			}catch(Exception e){
 				System.out.println("Query failed. " + e.getMessage());
