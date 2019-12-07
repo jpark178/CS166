@@ -884,7 +884,6 @@ public class DBProject {
                 System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
                 System.out.println(finaldate);
                 temp = finaldate;
-                          String tempDate = bookingDate;
 			          
                 while(true){
                  	System.out.print("Please input the number of People for the Booking: ");
@@ -905,20 +904,21 @@ public class DBProject {
                     System.out.println("Your input is invalid!");
                   }
                 }
+                			
+                try{
+                  query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
+                  esql.executeUpdate(query);
+                  break;
+                }catch(Exception e){
+                  System.out.println("Query failed: " + e.getMessage());
+                }
               }
       			}catch(Exception e){
             	System.out.println("Your input is invalid!");
               continue;
             }
         	}
-
-          try{
-            query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-            esql.executeUpdate(query);
-            break;
-          }catch(Exception e){
-            System.out.println("Query failed: " + e.getMessage());
-                }
+          String tempDate = bookingDate;
       	}
 
     	}catch(Exception e){
