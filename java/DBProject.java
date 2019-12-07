@@ -1142,10 +1142,15 @@ public class DBProject {
         continue;
       }
     };
-    String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
+        String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
+        String requestDate = finaldate;
+    //String finaldate = monthInput + "/" + dayInput + "/" + yearInput;
     System.out.println("Your inputted date is (In the format of MM/dd/yyyy ) : ");
     System.out.println(finaldate);
-    String requestDate = finaldate;
+    //String requestDate = finaldate;
+
+
+
 
    //get Description
    while(true) {
