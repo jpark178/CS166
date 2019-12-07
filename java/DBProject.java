@@ -906,8 +906,7 @@ public class DBProject {
                 			
                       try{
                   				query = "INSERT INTO Booking( bID, customer, hotelID, roomNo, bookingDate, noOfPeople, price) VALUES (" + bID + ", \'" + customerID + "\', \'" + hotelID + "\', \'" + roomNo + "\', \'" + tempDate + "\', \'" + noOfPeople + "\', \'" + price + "\');";
-                  				if(esql.executeUpdate(query) == 0) {
-                            System.out.println("Redo. BookingID exists.");
+                  				  esql.executeUpdate(query);
                           }
                           break;
                 			}catch(Exception e){
