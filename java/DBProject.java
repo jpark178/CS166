@@ -1321,6 +1321,166 @@ public class DBProject {
    public static void topKHighestRoomPriceForADateRange(DBProject esql){
 	  // List Top K Rooms with the highest price for a given date range
       // Your code goes here.
+      
+      int checkYear;
+      int checkMonth;
+      int checkDay;
+      
+      // Getting input for starting date
+      while(true) {
+		  System.out.print("Please enter start date year: ");
+		  try {
+			  checkYear = Integer.parseInt(in.readLine());
+			  if(checkYear == 0) {
+				  throw new RuntimeException("Starting year cannot be left blank.");
+			  }
+			  if(checkYear < 0 || checkYear > 9999) {
+				  throw new RuntimeException("Please input valid year (1 -9999).");
+			  }
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  while(true) {
+		  System.out.print("Please enter start date month: ");
+		  try {
+			  checkMonth = Integer.parseInt(in.readLine());
+			  if(checkMonth == 0) {
+				  throw new RuntimeException("Starting month cannot be left blank.");
+			  }
+			  if(checkMonth < 0 || checkMonth > 12) {
+				  throw new RuntimeException("Please input valid month (1 - 12).");
+			  }
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  while(true) {
+		  System.out.print("Please enter start date day: ");
+		  try {
+			  checkDay = Integer.parseInt(in.readLine());
+			  if(checkDay == 0) {
+				  throw new RuntimeException("Starting day cannot be left blank.");
+			  }
+			  if(checkMonth == 1 || checkMonth == 3 || checkMonth == 5 || checkMonth == 7 || checkMonth == 8 || checkMonth == 10 || checkMonth == 12) {
+                  if(checkDay <= 0 || checkDay > 31) {
+                      throw new RuntimeException("Please input valid date.");
+                  }
+              }
+              if(checkMonth == 4 || checkMonth == 6 || checkMonth == 9 || checkMonth == 11) {
+                  if(checkDay <= 0 || checkDay > 30) {
+                      throw new RuntimeException("Please input valid date.");
+                  }
+              }
+              if(checkMonth == 2) {
+                  if(checkDay <= 0 || checkDay > 28) {
+                      throw new RuntimeException("Please input valid date.");
+                  }
+              }
+              break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String startingDate = checkMonth + "/" + checkDay + "/" + checkYear;
+	  
+	  // Starting date end
+	  
+	  // Getting input for ending date
+	  
+	  while(true) {
+		  System.out.print("Please enter end date year: ");
+		  try {
+			  checkYear = Integer.parseInt(in.readLine());
+			  if(checkYear == 0) {
+				  throw new RuntimeException("Ending year cannot be left blank.");
+			  }
+			  if(checkYear < 0 || checkYear > 9999) {
+				  throw new RuntimeException("Please input valid year (1 -9999).");
+			  }
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  while(true) {
+		  System.out.print("Please enter end date month: ");
+		  try {
+			  checkMonth = Integer.parseInt(in.readLine());
+			  if(checkMonth == 0) {
+				  throw new RuntimeException("Ending month cannot be left blank.");
+			  }
+			  if(checkMonth < 0 || checkMonth > 12) {
+				  throw new RuntimeException("Please input valid month (1 - 12).");
+			  }
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  while(true) {
+		  System.out.print("Please enter end date day: ");
+		  try {
+			  checkDay = Integer.parseInt(in.readLine());
+			  if(checkDay == 0) {
+				  throw new RuntimeException("Ending day cannot be left blank.");
+			  }
+			  if(checkMonth == 1 || checkMonth == 3 || checkMonth == 5 || checkMonth == 7 || checkMonth == 8 || checkMonth == 10 || checkMonth == 12) {
+                  if(checkDay <= 0 || checkDay > 31) {
+                      throw new RuntimeException("Please input valid date.");
+                  }
+              }
+              if(checkMonth == 4 || checkMonth == 6 || checkMonth == 9 || checkMonth == 11) {
+                  if(checkDay <= 0 || checkDay > 30) {
+                      throw new RuntimeException("Please input valid date.");
+                  }
+              }
+              if(checkMonth == 2) {
+                  if(checkDay <= 0 || checkDay > 28) {
+                      throw new RuntimeException("Please input valid date.");
+                  }
+              }
+              break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String endingDate = checkMonth + "/" + checkDay + "/" checkYear;
+	  
+	  // Ending date end
+	  
+	  int k
+	  while(true) {
+		  System.out.print("Please enter a range: ");
+		  try {
+			  k = Integer.parseInt(in.readLine());
+			  break;
+		  } catch (Exception e) {
+			  System.out.println("Your input is invalid!");
+			  continue;
+		  }
+	  }
+	  
+	  String query;
+	  try {
+		  query = "SELECT B.bID FROM Booking B WHERE B.bookingDate >= " + startingDate + " AND B.bookingDate <= " + endingDate + " ORDER BY B.price DESC LIMIT " + k + ";";
+	  } catch (Exception e) {
+		  System.out.println("Query failed. " + e.getMessage());
+	  }
 	
       // ...
       // ...
