@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 -- The below sql statements drops of the tables if they exist
 DROP TABLE IF EXISTS Hotel CASCADE;
 DROP TABLE IF EXISTS Staff CASCADE;
@@ -230,5 +229,3 @@ COPY Assigned(asgID,
 			  roomNo)
 FROM 'assigned.csv'
 WITH DELIMITER ',';		
-
->>>>>>> 57b53f322c5d5bc54f2751d360344b5dbc20db82
