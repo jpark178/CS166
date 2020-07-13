@@ -1,9 +1,16 @@
-	
-# CS 166 Databases Project phase 3
+# CS 166 Databases Project
+
+## Languages / Frameworks:
+* PostgreSQL  
+* Java  
+* Bash  
 
 ## Team :
 * JaeHyun Park
 * Jeremy Tsai
+
+## Project Information:  
+* To create an Hotel database management system using PSQL, executable using bash, and interactable with Java
 
 ## Folder structure :
 > data - holds the necessary data files, these are used by create.sql to insert data into the tables   
@@ -18,6 +25,7 @@
 > Run postgresql .sh files to setup your DB  
 > Copy data file to DB temp folder before you run create.sql, else the data will not be inserting in the tables.  
 > Run compile.sh, to start your java program  
+
 
 
  
