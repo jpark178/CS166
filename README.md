@@ -1,5 +1,5 @@
 # CS 166 Databases Project 
-### (Report and Demo Doc Link: https://docs.google.com/document/d/113AwtUmMYF5VivOJ0-SggIeOujEaqj_Y2aFkvZCYFtc/edit ) 
+### (Report and Demo Doc Link: https://docs.google.com/document/d/113AwtUmMYF5VivOJ0-SggIeOujEaqj_Y2aFkvZCYFtc/edit?usp=sharing ) 
 
 ## Languages / Frameworks:
 * PostgreSQL  
