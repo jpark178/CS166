@@ -1,7 +1,11 @@
---------------------------------------------------------------------------		
-			CS 166 Databases Project phase 3
-----------------------------------------------------------------------------
-Folder structure 
+	
+# CS 166 Databases Project phase 3
+
+## Team :
+* JaeHyun Park
+* Jeremy Tsai
+
+## Folder structure :
 > data - holds the necessary data files, these are used by create.sql to insert data into the tables 
 > java - holds DBproject.java, Boiler plate code. Your code goes here!
        - compile.sh, run this .sh file to start your java program
@@ -10,7 +14,7 @@ Folder structure
 > sql - holds create.sql. This file holds SQL Statements to create appropriate tables and data in DB
 
 
-Notes:
+## Notes:
 > Run postgresql .sh files to setup your DB
 > Copy data file to DB temp folder before you run create.sql, else the data will not be inserting in the tables.
 > Run compile.sh, to start your java program
